@@ -1,14 +1,15 @@
-import React from "react";
+import React from "react"
+import Header from "../components/Header/Header"
+import "./App.scss"
 
 function App() {
   return (
     <div className="wrapper">
-      <header className="header"></header>
+      <Header />
       <main className="main"></main>
       <footer className="footer"></footer>
     </div>
-  );
+  )
 }
 
 export default App
-
