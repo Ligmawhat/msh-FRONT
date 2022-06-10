@@ -1,12 +1,15 @@
 import React from "react"
 import Header from "../components/Header/Header"
 import "./App.scss"
+import Router from "../router/Router"
 
 function App() {
   return (
     <div className="wrapper">
       <Header />
-      <main className="main"></main>
+      <main className="main">
+        <Router />
+      </main>
       <footer className="footer"></footer>
     </div>
   )

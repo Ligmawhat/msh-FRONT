@@ -7,7 +7,7 @@ $--lightest-slate: #ccd6f6;
 $--white: #e6f1ff;
 $--green-tint: rgba(100, 255, 218, 0.1);
 $--blue: #57cbff;
-$--font-sans: 'Roboto', sans-serif;
+$--font-roboto: 'Roboto', sans-serif;
 $--font-mono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
 $--fz-xxs: 12px;
 $--fz-xs: 13px;
@@ -59,7 +59,7 @@ $tablet: 768px;
 
 * {
   scroll-behavior: smooth;
-  font-family: $--font-sans;
+  font-family: $--font-roboto;
   background-color: $--white;
 }
 
