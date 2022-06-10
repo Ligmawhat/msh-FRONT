@@ -1,0 +1,92 @@
+@import "../../App/App";
+
+.news {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 0 100px;
+
+  &__item {
+    width: 300px;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+  }
+
+  &__img {
+    border-radius: $--border-radius;
+  }
+
+  &__right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 40%;
+  }
+
+  &__title {
+    font-size: $--fz-sm;
+  }
+
+  &__subtitle {
+    font-size: $--fz-sm;
+  }
+}
+
+.mainpage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 100px;
+  padding: 100px 0;
+
+  &__landing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-size: $--fz-lg;
+  }
+}
+
+.landing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: $--border-radius;
+    border: 1px solid black;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+}
