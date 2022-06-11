@@ -1,5 +1,7 @@
 import React from "react"
 import EventsMap from "../components/common/Map/Map"
+import TmpCalendarCall from "../components/TmpCalendarModal/tmpCalendarCall/tmpCalendarCall"
+import TmpUpload from "../components/tmpUpload/TmpUpload"
 import AuthorizationPage from "../pages/AuthorizationPage/AuthorizationPage"
 import EventsPage from "../pages/EventsPage/EventsPage"
 import MainPage from "../pages/MainPage/MainPage"
@@ -30,5 +32,13 @@ export const routes = {
   authorizationPage: {
     path: "/login",
     component: <AuthorizationPage />,
+  },
+  tmpUploadPage: {
+    path: "/upload",
+    component: <TmpUpload />,
+  },
+  tmpModal: {
+    path: "/modal",
+    component: <TmpCalendarCall />,
   },
 }
