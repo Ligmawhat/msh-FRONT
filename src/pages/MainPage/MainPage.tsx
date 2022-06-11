@@ -33,6 +33,9 @@ const MainPage: FC = () => {
 
   return (
     <div className="mainpage">
+      <video autoPlay muted loop className="background-video">
+        <source src="/assets/videos/background.mp4" type="video/mp4" />
+      </video>
       <section className="mainpage__landing landing">
         <h1 className="landing__title">Стань волонтером прямо сейчас</h1>
         <div className="landing__buttons">
