@@ -1,0 +1,26 @@
+.check-button {
+  position: static;
+  width: 197px;
+  height: 48px;
+  left: 636px;
+  top: 8px;
+
+  /* green/green-80 */
+  background: #168738;
+  border-radius: 8px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 0px 46px;
+  align-self: end;
+  color: #FFFFFF;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+}
