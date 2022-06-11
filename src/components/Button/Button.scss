@@ -1,0 +1,23 @@
+@import "../../App/App";
+
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: $--border-radius;
+  border: 1px solid transparent;
+  font-size: $--fz-md;
+  padding: 7px 13px;
+  cursor: pointer;
+  background-color: $--blue;
+  color: $--white;
+  transition: $--transition;
+
+  &:hover {
+    transition: $--transition;
+    background-color: $--white;
+    color: $--blue;
+    border: 1px solid $--blue;
+  }
+}
