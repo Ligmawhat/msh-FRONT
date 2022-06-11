@@ -1,4 +1,5 @@
 export interface IEvent {
+  id: number
   skills: any //под вопросом
   coordinates: number[]
   tags: string[]
@@ -12,4 +13,5 @@ export interface IEvent {
   urgent: number
   reward: number | null
   is_online: boolean
+  img: string
 }
