@@ -1,0 +1,29 @@
+.filters {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px;
+  
+    &__item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+      background-color: transparent;
+    }
+  
+    &__icon {
+      width: 15px;
+      height: 15px;
+      cursor: pointer;
+    }
+  
+    &__button {
+      color: "#000000";
+      border: 0 solid transparent;
+      background-color: transparent;
+      cursor: pointer;
+    }
+  }

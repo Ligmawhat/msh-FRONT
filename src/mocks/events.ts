@@ -1,4 +1,5 @@
 import { IEvent } from "../models/event"
+import { category } from "../models/redux"
 
 export const mockEvents: IEvent[] = [
   {
@@ -86,4 +87,13 @@ export const mockEvents: IEvent[] = [
     is_online: false,
     img: "https://dobro.ru/_next/image?url=https%3A%2F%2Fstorage.yandexcloud.net%2Fdobro-static%2Fprod%2Fimages%2F1d4a3c66-344a-b6fa-2a6e-e4d43d01c39d.jpg&w=3840&q=75",
   },
+]
+
+export const categories: category[] = [
+  {
+    name: "help",
+    active: false,
+    title: "помощь",
+  },
+  { name: "long", active: false, title: "помощь" },
 ]
