@@ -1,5 +1,6 @@
-import React, { FC } from "react"
+import React, { FC, useState } from "react"
 import "./Header.scss"
+import Burger from "../Burger/Burger"
 
 const mockLogo =
   "https://upload.wikimedia.org/wikipedia/commons/1/1e/RPC-JP_Logo.png"
@@ -7,6 +8,9 @@ const mockUser =
   "https://carouselcenter.org/wp-content/uploads/2017/01/blank-human-image.png"
 
 const Header: FC = () => {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const burgerHandler = () => setMenuOpen((prev) => !prev)
+
   return (
     <header className="header">
       <img src={mockLogo} alt="logo" className="header__logo" />
@@ -17,8 +21,14 @@ const Header: FC = () => {
           type="text"
         />
       </div>
-      <div className="header__auth">
-        <img src={mockUser} alt="user" className="header__user" />
+      <Burger menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <div
+        onClick={burgerHandler}
+        className={menuOpen ? "hamburger active" : "hamburger"}
+      >
+        <span className="line1" />
+        <span className="line2" />
+        <span className="line3" />
       </div>
     </header>
   )
