@@ -1,6 +1,7 @@
 import React, { FC } from "react"
 import "./EventsPage.scss"
-import Button from "../../components/common/Button/Button"
+import Button from "../../components/Button/Button"
+import EventsFilter from "../../components/EventsFilter/EventsFIlter"
 import { mockEvents } from "../../mocks/events"
 
 const filterUrl =
@@ -10,18 +11,7 @@ const EventsPage: FC = () => {
   return (
     <div className="events">
       <aside className="events__left filters">
-        <div className="filters__item">
-          <img src={filterUrl} alt="filter icon" className="filters__icon" />
-          <button className="filters__button">Категории</button>
-        </div>
-        <div className="filters__item">
-          <img src={filterUrl} alt="filter icon" className="filters__icon" />
-          <button className="filters__button">Местоположение</button>
-        </div>
-        <div className="filters__item">
-          <img src={filterUrl} alt="filter icon" className="filters__icon" />
-          <button className="filters__button">Срочно</button>
-        </div>
+        <EventsFilter />
       </aside>
       <div className="events__mid">
         {mockEvents &&
