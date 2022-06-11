@@ -1,4 +1,5 @@
 import React, { FC, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import Button from "../../components/common/Button/Button"
 import Input from "../../components/common/Input/Input"
 import "./RegistrationPage.scss"
@@ -9,6 +10,7 @@ const RegistrationPage: FC = () => {
     name: "",
     password: "",
   })
+  const navigate = useNavigate()
 
   const { email, name, password } = formData
 
@@ -50,7 +52,7 @@ const RegistrationPage: FC = () => {
       <div className="authorization__bottom">
         <div className="authorization__subtitle">Already have an account ?</div>
         <div className="authorization__alter">
-          <Button text={"Sign In"} onClick={() => null} />
+          <Button text={"Sign In"} onClick={() => navigate("/login")} />
         </div>
       </div>
     </div>

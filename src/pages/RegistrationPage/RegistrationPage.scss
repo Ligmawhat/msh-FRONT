@@ -2,12 +2,23 @@
 
 .authorization {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  padding: 50px 0;
   align-items: center;
   flex-direction: column;
   color: $--text-color-dark;
-  gap: 50px;
+  gap: 30px;
   height: 100vh;
+
+  @include miniMobile {
+    padding: 20px;
+  }
+  @include mobile {
+    padding: 20px;
+  }
+  @include tablet {
+    padding: 50px;
+  }
 
   &__title {
     font-size: $--fz-heading;
@@ -17,9 +28,16 @@
 
   &__subtitle {
     color: $--text-color;
-    font-size: $--fz-lg;
-    width: 100%;
+    width: 300px;
     text-align: center;
+    font-size: $--fz-lg;
+
+    @include miniMobile {
+      font-size: $--fz-sm;
+    }
+    @include mobile {
+      font-size: $--fz-sm;
+    }
   }
 
   &__bottom {
@@ -28,6 +46,7 @@
     align-items: center;
     flex-direction: row;
     width: 50%;
+    gap: 20px;
   }
 
   &__alter {
@@ -52,6 +71,19 @@
     gap: 20px;
     border-radius: 30px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    @include miniMobile {
+      padding: 20px;
+      width: 80vw;
+    }
+    @include mobile {
+      padding: 20px;
+      width: 80vw;
+    }
+    @include tablet {
+      padding: 50px;
+      width: 80vw;
+    }
   }
 
   &__bottom {

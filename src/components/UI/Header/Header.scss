@@ -10,6 +10,16 @@
   border-bottom: #EEEFF2 1px solid;
   background-color: $--white;
 
+  @include miniMobile {
+    padding: 20px;
+  }
+  @include mobile {
+    padding: 20px;
+  }
+  @include tablet {
+    padding: 50px;
+  }
+
   &__logo {
     cursor: pointer;
     max-width: 60px;
@@ -31,6 +41,7 @@
     height: 52px;
     position: relative;
     background-color: transparent;
+    width: 50%;
 
     button {
       position: absolute;

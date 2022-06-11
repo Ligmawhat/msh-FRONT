@@ -42,9 +42,11 @@ const AuthorizationPage = () => {
         <Button text={"Sign In"} onClick={() => null} />
       </div>
       <div className="authorization__bottom">
-        <div className="authorization__subtitle">Already have an account ?</div>
+        <div className="authorization__subtitle">
+          You have not any account ?
+        </div>
         <div className="authorization__alter">
-          <Button text={"Sign In"} onClick={() => navigate("/login")} />
+          <Button text={"Sign Up"} onClick={() => navigate("/register")} />
         </div>
       </div>
     </div>

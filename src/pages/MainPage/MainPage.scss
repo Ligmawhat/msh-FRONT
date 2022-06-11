@@ -1,5 +1,14 @@
 @import "../../App/App";
 
+.background-video {
+  position: absolute;
+  top: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 0;
+  opacity: 0.3;
+}
+
 .news {
   display: flex;
   justify-content: space-between;
@@ -48,6 +57,7 @@
 }
 
 .mainpage {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -57,23 +67,31 @@
   height: 100vh;
 
   &__landing {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-  }
-
-  &__title {
-    font-size: $--fz-lg;
+    z-index: 1;
   }
 }
 
 .landing {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
   gap: 50px;
+  backdrop-filter: blur(10px);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 50px;
+  border-radius: 20px;
+
+  &__title {
+    font-size: $--fz-heading;
+    color: $--text-color-dark;
+  }
 
   &__buttons {
     display: flex;

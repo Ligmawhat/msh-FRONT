@@ -1,6 +1,7 @@
 import React, { FC, useState } from "react"
 import "./Header.scss"
 import { useNavigate } from "react-router-dom"
+import Input from "../../common/Input/Input"
 import Burger from "../Burger/Burger"
 
 const mockLogo =
@@ -22,11 +23,12 @@ const Header: FC = () => {
         className="header__logo"
       />
       <div className="header__search">
-        <input
-          placeholder="Найти доброе дело или организацию"
-          className="header__input"
-          type="text"
-        />
+        {/*<input*/}
+        {/*  placeholder="Найти доброе дело или организацию"*/}
+        {/*  className="header__input"*/}
+        {/*  type="text"*/}
+        {/*/>*/}
+        <Input placeholder={"Найти доброе дело или организацию"} />
       </div>
       <Burger menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <div

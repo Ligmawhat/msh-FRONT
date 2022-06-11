@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Modal } from "../../common/TmpModal/TmpModal"
+import TmpCalendarModal from "../TmpCalendarModal"
 
 const TmpCalendarCall = () => {
   const [openModal, setOpenModal] = useState(false)
@@ -16,7 +17,7 @@ const TmpCalendarCall = () => {
           setOpenModal(false)
         }}
       >
-        <TmpCalendarCall />
+        <TmpCalendarModal />
       </Modal>
       <button onClick={modalHandler}>call calendar</button>
     </>

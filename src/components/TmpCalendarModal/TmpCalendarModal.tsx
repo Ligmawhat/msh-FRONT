@@ -1,12 +1,10 @@
-import React, { useState } from "react"
+import React, { FC, useState } from "react"
 import "./TmpCalendarModal.scss"
-// "react-date-range/dist/components/DateRange"
-// import DateRange from "react-date-range/dist/components/DateRange" // theme css file
 import "react-date-range/dist/styles.css" // main css file
 import "react-date-range/dist/theme/default.css"
 import { DateRange } from "react-date-range"
 
-const TmpCalendarModal = () => {
+const TmpCalendarModal: FC = () => {
   const [state, setState] = useState([
     {
       startDate: new Date(),
@@ -15,7 +13,7 @@ const TmpCalendarModal = () => {
     },
   ])
 
-  function dateHandler(e: any) {
+  function dateHandler() {
     console.log(state)
   }
 
