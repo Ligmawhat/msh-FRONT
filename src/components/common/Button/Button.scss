@@ -1,4 +1,4 @@
-@import "../../App/App";
+@import "../../../App/App";
 
 .button {
   display: flex;
@@ -12,6 +12,7 @@
   background-color: $--blue;
   color: $--white;
   transition: $--transition;
+  width: 100%;
 
   &:hover {
     transition: $--transition;

@@ -1,7 +1,7 @@
 export interface IEvent {
   id: number
   skills: any //под вопросом
-  coordinates: number[]
+  coordinates: IPlaces[]
   tags: string[]
   type: string
   title: string
@@ -14,4 +14,9 @@ export interface IEvent {
   reward: number | null
   is_online: boolean
   img: string
+}
+
+interface IPlaces {
+  latitude: number
+  longitude: number
 }

@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import "./EventsPage.scss"
-import Button from "../../components/Button/Button"
+import Button from "../../components/common/Button/Button"
 import { mockEvents } from "../../mocks/events"
 
 const filterUrl =

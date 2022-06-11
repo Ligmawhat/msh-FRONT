@@ -1,6 +1,5 @@
 import * as React from "react"
-import { useDispatch } from "react-redux"
-import { YMaps, Map, Clusterer, Placemark } from "react-yandex-maps"
+import { Clusterer, Map, Placemark, YMaps } from "react-yandex-maps"
 import "./Map.scss"
 
 type places = {
@@ -32,8 +31,6 @@ const allPlaces: places[] = [
 ]
 
 const EventsMap: React.FC = () => {
-  const dispatch = useDispatch()
-
   return (
     <YMaps
       query={{
