@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useState } from "react"
 import "./MainPage.scss"
 import axios from "axios"
+import Button from "../../components/Button/Button"
 
 interface NewsItem {
   source: {
@@ -32,8 +33,8 @@ const MainPage: FC = () => {
       <section className="mainpage__landing landing">
         <h1 className="landing__title">Стань волонтером прямо сейчас</h1>
         <div className="landing__buttons">
-          <button className="landing__button">Регистрация</button>
-          <button className="landing__button">Войти</button>
+          <Button text={"Регистрация"} onClick={() => null} />
+          <Button text={"Войти"} onClick={() => null} />
         </div>
       </section>
       <section className="mainpage__news news">

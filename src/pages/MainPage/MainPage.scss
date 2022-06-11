@@ -80,13 +80,4 @@
     gap: 20px;
   }
 
-  &__button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: $--border-radius;
-    border: 1px solid black;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
 }
