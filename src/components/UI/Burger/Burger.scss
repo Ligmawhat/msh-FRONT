@@ -1,4 +1,4 @@
-@import "../../App/App";
+@import "../../../App/App";
 
 .burger {
   right: -300px;
@@ -14,17 +14,14 @@
   justify-content: center;
   transition: $--transition;
 
-  &.active {
-    right: 0;
-    transition: $--transition;
-  }
-
   &__list {
     right: -500px;
     padding: 100px 0 0 0;
     transition: $--transition;
+    border-radius: $--border-radius;
+    box-shadow: rgba(55,125,255,0.3) -5px 5px, rgba(55,125,255,0.2) -10px 10px, rgba(55,125,255,0.1) -15px 15px, rgba(55,125,255,0.1) -20px 20px;
 
-    &.active {
+    &--active {
       right: 0;
       justify-content: center;
       align-items: center;
@@ -47,7 +44,7 @@
       transition-delay: 100ms;
       transition: $--transition;
       margin-bottom: 20px;
-      background-color: $--white;
+      background-color: transparent;
 
       span {
         display: flex;
@@ -58,12 +55,12 @@
         color: inherit;
         position: relative;
         transition: $--transition;
-        background-color: $--white;
+        background-color: transparent;
         cursor: pointer;
       }
 
       &__icon {
-        background-color: $--white;
+        background-color: transparent;
         color: $--blue;
         margin-right: 5px;
         width: 20px;
@@ -71,8 +68,8 @@
       }
 
       &__text {
-        background-color: $--white;
-        color: $--text-color;
+        background-color: transparent;
+        color: $--text-color-dark;
       }
     }
   }

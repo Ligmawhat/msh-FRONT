@@ -1,19 +1,26 @@
 import React, { FC, useState } from "react"
 import "./Header.scss"
+import { useNavigate } from "react-router-dom"
 import Burger from "../Burger/Burger"
 
 const mockLogo =
-  "https://upload.wikimedia.org/wikipedia/commons/1/1e/RPC-JP_Logo.png"
+  "https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image"
 const mockUser =
   "https://carouselcenter.org/wp-content/uploads/2017/01/blank-human-image.png"
 
 const Header: FC = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   const burgerHandler = () => setMenuOpen((prev) => !prev)
+  const navigate = useNavigate()
 
   return (
     <header className="header">
-      <img src={mockLogo} alt="logo" className="header__logo" />
+      <img
+        onClick={() => navigate("/")}
+        src={mockLogo}
+        alt="logo"
+        className="header__logo"
+      />
       <div className="header__search">
         <input
           placeholder="Найти доброе дело или организацию"
