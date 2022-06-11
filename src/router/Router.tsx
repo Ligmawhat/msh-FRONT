@@ -11,6 +11,10 @@ const Router: FC = () => {
         element={routes.notFoundPage.component}
       />
       <Route
+        path={routes.eventsMap.path}
+        element={routes.eventsMap.component}
+      />
+      <Route
         path={routes.eventsPage.path}
         element={routes.eventsPage.component}
       />
