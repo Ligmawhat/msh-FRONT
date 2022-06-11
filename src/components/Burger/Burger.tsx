@@ -37,7 +37,7 @@ const Burger: FC<BurgerProps> = ({ menuOpen, setMenuOpen }) => {
           >
             <span onClick={() => navigateHandler("/events")}>
               <img src={eventsLink} alt="nav icon" className="item__icon" />
-              <div className="item__text">Home</div>
+              <div className="item__text">Events</div>
             </span>
           </div>
         </div>
