@@ -20,4 +20,14 @@
     color: $--blue;
     border: 1px solid $--blue;
   }
+
+  &--disabled {
+    opacity: 0.5;
+
+    &:hover {
+      background-color: $--blue;
+      color: $--white;
+      transition: $--transition;
+    }
+  }
 }

@@ -33,7 +33,7 @@ const MainPage: FC = () => {
       <section className="mainpage__landing landing">
         <h1 className="landing__title">Стань волонтером прямо сейчас</h1>
         <div className="landing__buttons">
-          <Button text={"Регистрация"} onClick={() => null} />
+          <Button text={"Регистрация"} onClick={() => null} disabled={true} />
           <Button text={"Войти"} onClick={() => null} />
         </div>
       </section>
