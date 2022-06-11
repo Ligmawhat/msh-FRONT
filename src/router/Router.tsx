@@ -10,6 +10,10 @@ const Router: FC = () => {
         path={routes.notFoundPage.path}
         element={routes.notFoundPage.component}
       />
+      <Route
+        path={routes.eventsPage.path}
+        element={routes.eventsPage.component}
+      />
     </Routes>
   )
 }

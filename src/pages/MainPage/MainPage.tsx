@@ -3,6 +3,7 @@ import "./MainPage.scss"
 import axios from "axios"
 import Button from "../../components/Button/Button"
 
+//Удалить это mock
 interface NewsItem {
   source: {
     id: number
@@ -33,13 +34,13 @@ const MainPage: FC = () => {
       <section className="mainpage__landing landing">
         <h1 className="landing__title">Стань волонтером прямо сейчас</h1>
         <div className="landing__buttons">
-          <Button text={"Регистрация"} onClick={() => null} disabled={true} />
+          <Button text={"Регистрация"} onClick={() => null} />
           <Button text={"Войти"} onClick={() => null} />
         </div>
       </section>
       <section className="mainpage__news news">
-        {news.length &&
-          news.map((el) => (
+        {news &&
+          news.slice(0, 9).map((el) => (
             <div key={el.source.id} className="news__item">
               <div className="news__left">
                 <img

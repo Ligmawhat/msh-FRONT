@@ -1,0 +1,79 @@
+@import "../../App/App";
+
+.events {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+
+  &__left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: $--nav-height;
+    background-color: $--white;
+    width: 20%;
+    height: 100%;
+  }
+
+  &__right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    right: 0;
+    top: $--nav-height;
+    background-color: $--white;
+    width: 20%;
+    height: 100%;
+  }
+
+  &__mid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    right: 20%;
+    left: 20%;
+    top: $--nav-height;
+    background-color: $--light-white;
+    width: 60%;
+    height: 100%;
+    border-radius: 30px;
+  }
+}
+
+.filters {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px;
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    background-color: transparent;
+  }
+
+  &__icon {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+  }
+
+  &__button {
+    color: $--text-color;
+    border: 0 solid transparent;
+    background-color: transparent;
+    cursor: pointer;
+  }
+}
