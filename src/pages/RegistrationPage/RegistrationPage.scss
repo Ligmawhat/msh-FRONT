@@ -1,0 +1,62 @@
+@import "../../App/App";
+
+.authorization {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: $--text-color-dark;
+  gap: 50px;
+  height: 100vh;
+
+  &__title {
+    font-size: $--fz-heading;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__subtitle {
+    color: $--text-color;
+    font-size: $--fz-lg;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 50%;
+  }
+
+  &__alter {
+    width: 100px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__mid {
+    width: 60vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 100px;
+    background-color: $--white;
+    gap: 20px;
+    border-radius: 30px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

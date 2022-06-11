@@ -1,5 +1,6 @@
 import React, { FC, useState } from "react"
 import "./Header.scss"
+import { useNavigate } from "react-router-dom"
 import Burger from "../Burger/Burger"
 
 const mockLogo =
@@ -10,10 +11,16 @@ const mockUser =
 const Header: FC = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   const burgerHandler = () => setMenuOpen((prev) => !prev)
+  const navigate = useNavigate()
 
   return (
     <header className="header">
-      <img src={mockLogo} alt="logo" className="header__logo" />
+      <img
+        onClick={() => navigate("/")}
+        src={mockLogo}
+        alt="logo"
+        className="header__logo"
+      />
       <div className="header__search">
         <input
           placeholder="Найти доброе дело или организацию"

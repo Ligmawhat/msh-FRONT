@@ -18,6 +18,14 @@ const Router: FC = () => {
         path={routes.eventsPage.path}
         element={routes.eventsPage.component}
       />
+      <Route
+        path={routes.registrationPage.path}
+        element={routes.registrationPage.component}
+      />
+      <Route
+        path={routes.authorizationPage.path}
+        element={routes.authorizationPage.component}
+      />
     </Routes>
   )
 }

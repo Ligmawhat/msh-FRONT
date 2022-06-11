@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom"
 
 const homeLink = "https://cdn-icons-png.flaticon.com/512/25/25694.png"
 const eventsLink = "https://cdn-icons-png.flaticon.com/512/48/48732.png"
+const registrationLink =
+  "https://uxwing.com/wp-content/themes/uxwing/download/03-editing-user-action/new-registration.png"
 
 interface BurgerProps {
   menuOpen: boolean
@@ -41,6 +43,20 @@ const Burger: FC<BurgerProps> = ({ menuOpen, setMenuOpen }) => {
             <span onClick={() => navigateHandler("/events")}>
               <img src={eventsLink} alt="nav icon" className="item__icon" />
               <div className="item__text">Events</div>
+            </span>
+          </div>
+          <div
+            role="navigation"
+            onClick={closeHandler}
+            className="burger__item item "
+          >
+            <span onClick={() => navigateHandler("/register")}>
+              <img
+                src={registrationLink}
+                alt="nav icon"
+                className="item__icon"
+              />
+              <div className="item__text">Sign Up</div>
             </span>
           </div>
         </div>
