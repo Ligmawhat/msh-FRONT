@@ -3,8 +3,7 @@ import "./Burger.scss"
 import { useNavigate } from "react-router-dom"
 
 const homeLink = "https://cdn-icons-png.flaticon.com/512/25/25694.png"
-const eventsLink =
-  "https://toppng.com/uploads/preview/event-accepted-filled-icon-event-icon-11553508126tpo9z8k2ym.png"
+const eventsLink = "https://cdn-icons-png.flaticon.com/512/48/48732.png"
 
 interface BurgerProps {
   menuOpen: boolean
@@ -19,7 +18,11 @@ const Burger: FC<BurgerProps> = ({ menuOpen, setMenuOpen }) => {
   return (
     <div className="right__burger burger ">
       <aside>
-        <div className={menuOpen ? "burger__list active" : "burger__list"}>
+        <div
+          className={
+            menuOpen ? "burger__list burger__list--active" : "burger__list"
+          }
+        >
           <div
             role="navigation"
             onClick={closeHandler}

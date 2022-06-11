@@ -3,7 +3,7 @@ import "./Header.scss"
 import Burger from "../Burger/Burger"
 
 const mockLogo =
-  "https://upload.wikimedia.org/wikipedia/commons/1/1e/RPC-JP_Logo.png"
+  "https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image"
 const mockUser =
   "https://carouselcenter.org/wp-content/uploads/2017/01/blank-human-image.png"
 

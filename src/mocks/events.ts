@@ -4,7 +4,12 @@ export const mockEvents: IEvent[] = [
   {
     id: 1,
     skills: null,
-    coordinates: [123, 456],
+    coordinates: [
+      {
+        latitude: 123,
+        longitude: 123,
+      },
+    ],
     tags: ["#тег1", "#тег2"],
     type: "какой-то",
     title: "Помощь бабушке",
@@ -21,7 +26,12 @@ export const mockEvents: IEvent[] = [
   {
     id: 2,
     skills: null,
-    coordinates: [123, 456],
+    coordinates: [
+      {
+        latitude: 123,
+        longitude: 123,
+      },
+    ],
     tags: ["#тег1", "#тег2", "#тег3"],
     type: "Тип",
     title: "Помощь дедушке",
@@ -38,7 +48,12 @@ export const mockEvents: IEvent[] = [
   {
     id: 3,
     skills: null,
-    coordinates: [123, 456],
+    coordinates: [
+      {
+        latitude: 123,
+        longitude: 123,
+      },
+    ],
     type: "Тип",
     tags: ["#тег1", "#тег2", "#тег3"],
     title: "Помощь дедушке",
@@ -55,7 +70,12 @@ export const mockEvents: IEvent[] = [
   {
     id: 4,
     skills: null,
-    coordinates: [123, 456],
+    coordinates: [
+      {
+        latitude: 123,
+        longitude: 123,
+      },
+    ],
     type: "Тип",
     tags: ["#тег1", "#тег2", "#тег3"],
     title: "Помощь дедушке",
@@ -72,7 +92,12 @@ export const mockEvents: IEvent[] = [
   {
     id: 5,
     skills: null,
-    coordinates: [123, 456],
+    coordinates: [
+      {
+        latitude: 123,
+        longitude: 123,
+      },
+    ],
     tags: ["#тег1", "#тег2", "#тег3"],
     type: "Тип",
     title: "Помощь дедушке",
