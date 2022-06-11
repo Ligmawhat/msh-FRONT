@@ -14,6 +14,10 @@ const Router: FC = () => {
         path={routes.eventsPage.path}
         element={routes.eventsPage.component}
       />
+      <Route
+        path={routes.tmpUploadPage.path}
+        element={routes.tmpUploadPage.component}
+      />
     </Routes>
   )
 }
