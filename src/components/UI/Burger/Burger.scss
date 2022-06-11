@@ -19,12 +19,14 @@
     padding: 100px 0 0 0;
     transition: $--transition;
     border-radius: $--border-radius;
-    box-shadow: rgba(55,125,255,0.3) -5px 5px, rgba(55,125,255,0.2) -10px 10px, rgba(55,125,255,0.1) -15px 15px, rgba(55,125,255,0.1) -20px 20px;
 
     &--active {
+      box-shadow: rgba(55,125,255,0.3) -5px 5px, rgba(55,125,255,0.2) -10px 10px, rgba(55,125,255,0.1) -15px 15px, rgba(55,125,255,0.1) -20px 20px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding-left: 100px;
       right: 0;
-      justify-content: center;
-      align-items: center;
       transition: $--transition;
       flex-direction: column;
       width: 300px;

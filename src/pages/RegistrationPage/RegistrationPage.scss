@@ -2,12 +2,13 @@
 
 .authorization {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 50px 0;
   align-items: center;
   flex-direction: column;
   color: $--text-color-dark;
-  gap: 50px;
-  height: 100vh;
+  gap: 30px;
+  height: 100%;
 
   &__title {
     font-size: $--fz-heading;
