@@ -25,21 +25,31 @@ const EventsPage: FC = () => {
       </aside>
       <div className="events__mid">
         <div className="events__list">
-          {mockEvents.map((el) => (
-            <div key={el.id} className="events__item event">
-              <div className="event__top">
-                <div className="event__title">{el.title}</div>
-                <div className="event__subtitle">{el.category}</div>
+          {mockEvents &&
+            mockEvents.map((el) => (
+              <div key={el.id} className="events__item event">
+                <div className="event__top">
+                  <div className="event__title">{el.title}</div>
+                  <div className="event__subtitle">{el.category}</div>
+                </div>
+                <div className="event__mid">
+                  <img src={el.img} alt="event image" className="event__img" />
+                </div>
+                <div className="event__bottom">
+                  <div className="event__date">{el.date_and_time}</div>
+                  <div className="event__tags">
+                    {el.tags.map((tag, i) => (
+                      <div key={i} className="event__tag">
+                        {tag}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="events__button">
+                  <Button text={"Помочь"} onClick={() => null} />
+                </div>
               </div>
-              <div className="event__mid">
-                <img src={el.img} alt="event image" className="event__img" />
-              </div>
-              <div className="event__bottom">
-                <div className="event__date">{el.date_and_time}</div>
-                <Button text={"Помочь"} onClick={() => null} />
-              </div>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
       <aside className="events__right">Тут карта</aside>
