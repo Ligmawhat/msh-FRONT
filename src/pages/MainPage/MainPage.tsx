@@ -1,7 +1,8 @@
 import React, { FC, useEffect, useState } from "react"
 import "./MainPage.scss"
 import axios from "axios"
-import Button from "../../components/Button/Button"
+import { useNavigate } from "react-router-dom"
+import Button from "../../components/common/Button/Button"
 
 //Удалить это mock
 interface NewsItem {
@@ -24,6 +25,7 @@ const api =
 
 const MainPage: FC = () => {
   const [news, setNews] = useState<NewsItem[]>([])
+  const navigate = useNavigate()
 
   useEffect(() => {
     axios.get(api).then((res) => setNews(res.data.articles))
@@ -31,11 +33,14 @@ const MainPage: FC = () => {
 
   return (
     <div className="mainpage">
+      <video autoPlay muted loop className="background-video">
+        <source src="/assets/videos/background.mp4" type="video/mp4" />
+      </video>
       <section className="mainpage__landing landing">
         <h1 className="landing__title">Стань волонтером прямо сейчас</h1>
         <div className="landing__buttons">
-          <Button text={"Регистрация"} onClick={() => null} />
-          <Button text={"Войти"} onClick={() => null} />
+          <Button text={"Регистрация"} onClick={() => navigate("/register")} />
+          <Button text={"Войти"} onClick={() => navigate("/login")} />
         </div>
       </section>
       <section className="mainpage__news news">

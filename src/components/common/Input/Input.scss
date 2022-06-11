@@ -1,0 +1,37 @@
+@import "../../../App/App";
+
+.field-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid #bbbbbb;
+  border-radius: 10px;
+  width: 100%;
+
+  &__input {
+    width: 100%;
+    color: $--dark-slate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 1px solid #bbbbbb;
+
+    &:focus {
+      outline: none !important;
+      box-shadow: 0 0 10px #719ECE;
+    }
+
+    &::placeholder {
+      color: #A8B0BD;
+    }
+  }
+
+  &__title {
+    color: $--blue;
+    font-size: $--fz-sm;
+  }
+}

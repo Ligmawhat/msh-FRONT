@@ -1,0 +1,94 @@
+@import "../../App/App";
+
+.authorization {
+  display: flex;
+  justify-content: flex-start;
+  padding: 50px 0;
+  align-items: center;
+  flex-direction: column;
+  color: $--text-color-dark;
+  gap: 30px;
+  height: 100vh;
+
+  @include miniMobile {
+    padding: 20px;
+  }
+  @include mobile {
+    padding: 20px;
+  }
+  @include tablet {
+    padding: 50px;
+  }
+
+  &__title {
+    font-size: $--fz-heading;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__subtitle {
+    color: $--text-color;
+    width: 300px;
+    text-align: center;
+    font-size: $--fz-lg;
+
+    @include miniMobile {
+      font-size: $--fz-sm;
+    }
+    @include mobile {
+      font-size: $--fz-sm;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 50%;
+    gap: 20px;
+  }
+
+  &__alter {
+    width: 100px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__mid {
+    width: 60vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 100px;
+    background-color: $--white;
+    gap: 20px;
+    border-radius: 30px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    @include miniMobile {
+      padding: 20px;
+      width: 80vw;
+    }
+    @include mobile {
+      padding: 20px;
+      width: 80vw;
+    }
+    @include tablet {
+      padding: 50px;
+      width: 80vw;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
