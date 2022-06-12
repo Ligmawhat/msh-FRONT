@@ -1,5 +1,5 @@
 import React from "react"
-import EventsMap from "../components/common/Map/Map"
+import EventsMap from "../components/common/EventsMap/EventsMap"
 import TmpCalendarCall from "../components/TmpCalendarModal/tmpCalendarCall/tmpCalendarCall"
 import TmpUpload from "../components/tmpUpload/TmpUpload"
 import AuthorizationPage from "../pages/AuthorizationPage/AuthorizationPage"

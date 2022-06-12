@@ -1,7 +1,7 @@
 import React, { FC } from "react"
-import "./Button.scss"
 
 interface ButtonProps {
+  clicked?: boolean
   text: string
   type?: "button" | "submit" | "reset"
   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void
@@ -9,7 +9,8 @@ interface ButtonProps {
   width?: number
 }
 
-const Button: FC<ButtonProps> = ({
+const TransparentButton: FC<ButtonProps> = ({
+  clicked,
   text,
   onClick,
   disabled,
@@ -19,14 +20,20 @@ const Button: FC<ButtonProps> = ({
   return (
     <button
       disabled={disabled}
-      className={disabled ? "button button--disabled" : "button"}
+      className={
+        disabled
+          ? "button button--disabled button--transparent"
+          : clicked
+          ? "button button--clicked"
+          : "button button--transparent"
+      }
       type={type}
       onClick={onClick}
-      style={{ maxWidth: `${width}px` }}
+      style={{ maxWidth: `${width}` }}
     >
       {text}
     </button>
   )
 }
 
-export default Button
+export default TransparentButton

@@ -21,7 +21,7 @@ export const initState: IInitState = {
       name: "urgent",
       value: null,
       title: "Срочность",
-      type: filterType.buttons,
+      type: filterType.checkbox,
     },
   ],
 }
