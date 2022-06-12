@@ -2,7 +2,7 @@ import * as React from "react"
 import Autocomplete from "@mui/material/Autocomplete"
 import TextField from "@mui/material/TextField"
 
-export default function Grouped() {
+export default function SearchGrouped() {
   const options = top100Films.map((option) => {
     const categoriesTitle = option.category.toUpperCase()
     return {

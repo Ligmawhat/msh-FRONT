@@ -27,4 +27,19 @@
       background-color: transparent;
       cursor: pointer;
     }
+
+    &__accordion {
+      width: 100%; 
+    }
+
+    &__accordionButtons {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    &__accordionButton {
+      margin: 3px; 
+    }
+
   }
