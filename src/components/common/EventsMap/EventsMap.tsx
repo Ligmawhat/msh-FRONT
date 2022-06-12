@@ -1,6 +1,5 @@
 import * as React from "react"
 import { Clusterer, Map, Placemark, YMaps } from "react-yandex-maps"
-import "./Map.scss"
 
 type places = {
   latitude: number
@@ -39,7 +38,7 @@ const EventsMap: React.FC = () => {
       version={"2.1"}
     >
       <Map
-        style={{ width: 800, height: 800 }}
+        style={{ width: "100%", height: "100%" }}
         defaultState={{
           center: [55.75, 37.57],
           zoom: 9,

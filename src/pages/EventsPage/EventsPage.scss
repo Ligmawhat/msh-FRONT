@@ -8,12 +8,6 @@
   width: 100%;
   height: 100%;
 
-  &__button {
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-  }
-
   &__left {
     display: flex;
     justify-content: center;
@@ -25,6 +19,13 @@
     background-color: $--white;
     width: 20%;
     height: 100%;
+
+    @include mobile {
+      display: none;
+    }
+    @include miniMobile {
+      display: none;
+    }
   }
 
   &__right {
@@ -36,8 +37,15 @@
     right: 0;
     top: $--nav-height;
     background-color: $--white;
-    width: 20%;
+    width: 30%;
     height: 100%;
+
+    @include mobile {
+      display: none;
+    }
+    @include miniMobile {
+      display: none;
+    }
   }
 
   &__mid {
@@ -46,17 +54,28 @@
     align-items: center;
     flex-direction: column;
     position: fixed;
-    right: 20%;
+    right: 30%;
     left: 20%;
     top: $--nav-height;
     background-color: $--light-white;
-    width: 60%;
+    width: 50%;
     height: 100%;
     border-radius: 30px;
     border: 0 solid transparent;
     overflow-y: scroll;
     padding: 50px 0 150px 0;
     gap: 50px;
+
+    @include mobile {
+      width: 100%;
+      left: 0;
+
+    }
+    @include miniMobile {
+      width: 100%;
+      left: 0;
+
+    }
 
     &::-webkit-scrollbar {
       display: none;
@@ -71,6 +90,12 @@
   flex-direction: column;
   gap: 20px;
   padding: 40px;
+  @include mobile {
+    display: none;
+  }
+  @include miniMobile {
+    display: none;
+  }
 
   &__item {
     display: flex;
@@ -122,6 +147,15 @@
     cursor: pointer;
     transition: $--transition;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+    @include mobile {
+      width: 220px;
+      height: 150px;
+    }
+    @include miniMobile {
+      width: 220px;
+      height: 150px;
+    }
 
     &:hover {
       opacity: 0.8;
