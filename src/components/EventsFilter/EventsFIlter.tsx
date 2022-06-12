@@ -4,9 +4,14 @@ import AccordionDetails from "@mui/material/AccordionDetails"
 import AccordionSummary from "@mui/material/AccordionSummary"
 import Typography from "@mui/material/Typography"
 import { useAppDispatch, useAppSelector } from "../../hooks/redux"
-import { oneFilter } from "../../models/redux"
-import { getFilters } from "../../redux/actions/filterActions"
+import { category, filterType, oneFilter } from "../../models/redux"
+import {
+  ACTION_setFilters,
+  getFilters,
+} from "../../redux/actions/filterActions"
 import "./EventsFilter.scss"
+import TransparentButton from "../common/TransparentButton/TransparentButton"
+import SearchGrouped from "../SearchGrouped/SearchGrouped"
 
 interface panel {
   id: number
@@ -18,7 +23,6 @@ const filterUrl =
 
 const EventsFilter: FC = () => {
   const filters: oneFilter[] = useAppSelector((state) => {
-    console.log("STATE >>>>>", state)
     return state.filters
   })
   const dispatch = useAppDispatch()
@@ -31,8 +35,7 @@ const EventsFilter: FC = () => {
   )
 
   const handleChange =
-    (panelNumber: number) =>
-    (event: React.SyntheticEvent, isExpanded: boolean) => {
+    (panelNumber: number) => (event: React.SyntheticEvent) => {
       setExpanded((state) =>
         state.map((panel) => {
           return panel.id === panelNumber
@@ -42,7 +45,24 @@ const EventsFilter: FC = () => {
       )
     }
 
-  console.log("FILTERS", filters)
+  const handleActiveButton = (changeCategory: category) => {
+    const newFilters = filters.map((filter) => {
+      if (
+        (filter.value as category[])?.find(
+          (el) => el.title === changeCategory.title,
+        )
+      ) {
+        const newValue = (filter.value as category[]).map((oneCategory) => {
+          return oneCategory.title === changeCategory.title
+            ? { ...oneCategory, active: !changeCategory.active }
+            : oneCategory
+        })
+        return { ...filter, value: newValue }
+      }
+      return filter
+    })
+    dispatch(ACTION_setFilters(newFilters as oneFilter[]))
+  }
 
   return (
     <>
@@ -50,6 +70,7 @@ const EventsFilter: FC = () => {
         return (
           <div key={index} className="filters__item">
             <Accordion
+              className="filters__accordion"
               expanded={Boolean(
                 expanded.find((panel) => panel.id === index)?.opened,
               )}
@@ -70,8 +91,28 @@ const EventsFilter: FC = () => {
               </AccordionSummary>
               <AccordionDetails>
                 <Typography>
-                  Nulla facilisi. Phasellus sollicitudin nulla et quam mattis
-                  feugiat. Aliquam eget maximus est, id dignissim quam.
+                  <div className="filters__accordionButtons">
+                    {filter.type === filterType.buttons ? (
+                      (filter.value as category[])?.map((category, index) => {
+                        return (
+                          <div
+                            key={`${category.title}${index}`}
+                            className="filters__accordionButton"
+                          >
+                            <TransparentButton
+                              clicked={category.active}
+                              text={category.title}
+                              onClick={() => handleActiveButton(category)}
+                            />
+                          </div>
+                        )
+                      })
+                    ) : filter.type === filterType.search ? (
+                      <SearchGrouped />
+                    ) : (
+                      "Фильтр"
+                    )}
+                  </div>
                 </Typography>
               </AccordionDetails>
             </Accordion>
