@@ -17,7 +17,7 @@ function App() {
   const socket = useRef<WebSocket>()
   const navigate = useNavigate()
   // const user = useAppSelector((state) => state.user)
-  const user = true
+  const user = false
   const isCheckedAuth = useRef(false)
   const matched = window.matchMedia("(prefers-color-scheme: dark)").matches
 
