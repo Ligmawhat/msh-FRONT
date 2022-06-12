@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import "./EventsPage.scss"
-import Button from "../../components/Button/Button"
+import Button from "../../components/common/Button/Button"
 import EventsFilter from "../../components/EventsFilter/EventsFIlter"
 import { mockEvents } from "../../mocks/events"
 
