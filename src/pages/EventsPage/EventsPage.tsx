@@ -1,6 +1,7 @@
 import React, { FC } from "react"
 import "./EventsPage.scss"
 import Button from "../../components/common/Button/Button"
+import EventsMap from "../../components/common/EventsMap/EventsMap"
 import EventsFilter from "../../components/EventsFilter/EventsFIlter"
 import { mockEvents } from "../../mocks/events"
 
@@ -35,7 +36,9 @@ const EventsPage: FC = () => {
             </div>
           ))}
       </div>
-      <aside className="events__right">Тут карта</aside>
+      <aside className="events__right">
+        <EventsMap />
+      </aside>
     </div>
   )
 }

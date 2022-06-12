@@ -1,5 +1,4 @@
 import React, { FC } from "react"
-import "./TransparentButton.scss"
 
 interface ButtonProps {
   clicked?: boolean
@@ -23,10 +22,10 @@ const TransparentButton: FC<ButtonProps> = ({
       disabled={disabled}
       className={
         disabled
-          ? "button button--disabled"
+          ? "button button--disabled button--transparent"
           : clicked
           ? "button button--clicked"
-          : "button"
+          : "button button--transparent"
       }
       type={type}
       onClick={onClick}
