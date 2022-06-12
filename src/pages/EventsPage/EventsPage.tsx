@@ -34,9 +34,7 @@ const EventsPage: FC = () => {
                   ))}
                 </div>
               </div>
-              <div className="events__button">
-                <Button text={"Помочь"} onClick={() => null} />
-              </div>
+              <Button width={250} text={"Помочь"} onClick={() => null} />
             </div>
           ))}
       </div>
