@@ -1,25 +1,24 @@
 import React, { useEffect, useRef } from "react"
+import { useNavigate } from "react-router-dom"
 import Header from "../components/UI/Header/Header"
 import "./App.scss"
-import { useAppDispatch, useAppSelector } from "../hooks/redux"
+import { useAppDispatch } from "../hooks/redux"
 import Router from "../router/Router"
-import { useNavigate } from "react-router-dom"
+import { createSocketOnMessage } from "../utils/socket.message"
 
 function App() {
   const dispatch = useAppDispatch()
-  // const url = process.env.REACT_APP_URL_SOCKET
-  const url = "ws://localhost:3001/"
+  const url = process.env.REACT_APP_URL_SOCKET
   const socket = useRef<WebSocket>()
   const navigate = useNavigate()
-  const user = useAppSelector((state) => state.user)
+  // const user = useAppSelector((state) => state.user)
+  const user = true
   const isCheckedAuth = useRef(false)
 
   useEffect(() => {
     if (user) {
-      // dispatch(getGames())
       socket.current = new WebSocket(url as string)
-      const socketOnMessage = createSocketOnMessage(dispatch)
-      socket.current.onmessage = socketOnMessage
+      socket.current.onmessage = createSocketOnMessage(dispatch)
       socket.current.onclose = () => {
         alert("server close ws connection. Try again later")
         navigate("/")
