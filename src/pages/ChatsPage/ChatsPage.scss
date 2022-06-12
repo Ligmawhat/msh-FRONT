@@ -110,11 +110,11 @@
     min-width: 25%;
   }
 
-
   &:hover {
     background-color: $--light-white;
     transition: $--transition;
   }
+
 
   &--active {
     background-color: #dfe4e8;
@@ -122,6 +122,25 @@
 
     &:hover {
       background-color: #dfe4e8;
+      transition: $--transition;
+    }
+  }
+
+  &--activeblack {
+    background-color: $--black-light;
+    transition: $--transition;
+
+    &:hover {
+      background-color: $--black-light;
+      transition: $--transition;
+    }
+  }
+
+  &--black {
+    background-color: $--black;
+
+    &:hover {
+      background-color: $--black-light;
       transition: $--transition;
     }
   }

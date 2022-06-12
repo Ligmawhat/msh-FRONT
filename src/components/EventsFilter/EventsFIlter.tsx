@@ -11,7 +11,7 @@ import {
 } from "../../redux/actions/filterActions"
 import "./EventsFilter.scss"
 import TransparentButton from "../common/TransparentButton/TransparentButton"
-import SearchGrouped from "../SearchGrouped/SearchGrouped"
+import LocationFilter from "../LocationFilter/LocationFilter"
 
 interface panel {
   id: number
@@ -48,6 +48,7 @@ const EventsFilter: FC = () => {
   const handleActiveButton = (changeCategory: category) => {
     const newFilters = filters.map((filter) => {
       if (
+        filter.type === filterType.buttons &&
         (filter.value as category[])?.find(
           (el) => el.title === changeCategory.title,
         )
@@ -108,7 +109,7 @@ const EventsFilter: FC = () => {
                         )
                       })
                     ) : filter.type === filterType.search ? (
-                      <SearchGrouped />
+                      <LocationFilter />
                     ) : (
                       "Фильтр"
                     )}

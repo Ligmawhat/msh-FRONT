@@ -22,7 +22,7 @@
 
     &:focus {
       outline: none !important;
-      box-shadow: 0 0 10px #719ECE;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     }
 
     &::placeholder {

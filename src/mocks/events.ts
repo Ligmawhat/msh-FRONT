@@ -1,4 +1,4 @@
-import { IEvent } from "../models/event"
+import { IEvent, location } from "../models/event"
 import { category } from "../models/redux"
 
 export const mockEvents: IEvent[] = [
@@ -124,4 +124,19 @@ export const categories: category[] = [
   { name: "trip", active: false, title: "путешествие" },
   { name: "money", active: false, title: "сбор пожертвований" },
   { name: "closest", active: false, title: "ближайшие" },
+]
+
+export const tempLocations: location[] = [
+  {
+    id: 1,
+    place: "Улица Ленина",
+    latitude: 50.55,
+    longitude: 43,
+  },
+  {
+    id: 2,
+    place: "Улица 1905 года",
+    latitude: 50.65,
+    longitude: 43,
+  },
 ]

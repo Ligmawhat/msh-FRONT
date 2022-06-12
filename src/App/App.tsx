@@ -3,24 +3,38 @@ import { useNavigate } from "react-router-dom"
 import Header from "../components/UI/Header/Header"
 import "./App.scss"
 import { useAppDispatch, useAppSelector } from "../hooks/redux"
+import {
+  ACTION_blackTheme,
+  ACTION_whiteTheme,
+} from "../redux/actions/themeActions"
 import Router from "../router/Router"
 import { createSocketOnMessage } from "../utils/socket.message"
 
 function App() {
   const dispatch = useAppDispatch()
   const url = process.env.REACT_APP_URL_SOCKET
+  const isThemeBlack = useAppSelector((state) => state.isThemeBlack)
   const socket = useRef<WebSocket>()
   const navigate = useNavigate()
-  const user = useAppSelector((state) => state.user)
+  // const user = useAppSelector((state) => state.user)
+  const user = true
   const isCheckedAuth = useRef(false)
+  const matched = window.matchMedia("(prefers-color-scheme: dark)").matches
+
+  useEffect(() => {
+    if (matched) {
+      dispatch(ACTION_blackTheme())
+    } else {
+      dispatch(ACTION_whiteTheme())
+    }
+  }, [])
 
   useEffect(() => {
     if (user) {
       socket.current = new WebSocket(url as string)
-      const socketOnMessage = createSocketOnMessage(dispatch)
-      socket.current.onmessage = socketOnMessage
+      socket.current.onmessage = createSocketOnMessage(dispatch)
       socket.current.onclose = () => {
-        alert("server close ws connection. Try again later")
+        console.log("server close ws connection. Try again later")
         navigate("/")
       }
     }
@@ -34,7 +48,7 @@ function App() {
   }, [])
 
   return (
-    <div className="wrapper">
+    <div className={`wrapper ${isThemeBlack && "_black"}`}>
       <Header />
       <main className="main">
         <Router />
