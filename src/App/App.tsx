@@ -3,6 +3,10 @@ import { useNavigate } from "react-router-dom"
 import Header from "../components/UI/Header/Header"
 import "./App.scss"
 import { useAppDispatch, useAppSelector } from "../hooks/redux"
+import {
+  ACTION_blackTheme,
+  ACTION_whiteTheme,
+} from "../redux/actions/themeActions"
 import Router from "../router/Router"
 import { createSocketOnMessage } from "../utils/socket.message"
 
@@ -15,6 +19,15 @@ function App() {
   // const user = useAppSelector((state) => state.user)
   const user = true
   const isCheckedAuth = useRef(false)
+  const matched = window.matchMedia("(prefers-color-scheme: dark)").matches
+
+  useEffect(() => {
+    if (matched) {
+      dispatch(ACTION_blackTheme())
+    } else {
+      dispatch(ACTION_whiteTheme())
+    }
+  }, [])
 
   useEffect(() => {
     if (user) {

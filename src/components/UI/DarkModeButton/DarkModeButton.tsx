@@ -10,7 +10,6 @@ const DarkModeButton = () => {
   const dispatch = useAppDispatch()
   const isThemeBlack = useAppSelector((s) => s.isThemeBlack)
   const themeHandler = () => {
-    console.log(123)
     if (isThemeBlack) {
       dispatch(ACTION_whiteTheme())
     } else {
