@@ -4,9 +4,6 @@ import Button from "../../components/common/Button/Button"
 import EventsFilter from "../../components/EventsFilter/EventsFIlter"
 import { mockEvents } from "../../mocks/events"
 
-const filterUrl =
-  "https://cdn0.iconfinder.com/data/icons/glyphpack/36/filter-512.png"
-
 const EventsPage: FC = () => {
   return (
     <div className="events">
