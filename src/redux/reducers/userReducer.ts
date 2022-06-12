@@ -4,6 +4,7 @@ import { initState } from "../init/initState"
 
 export const userReducer = (
   state: IInitState = initState,
+  // eslint-disable-next-line prettier/prettier
   action: AnyAction
 ) => {
   switch (action.type) {
