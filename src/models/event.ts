@@ -20,3 +20,10 @@ interface IPlaces {
   latitude: number
   longitude: number
 }
+
+export interface location {
+  id: number
+  place: string
+  latitude: number
+  longitude: number
+}
