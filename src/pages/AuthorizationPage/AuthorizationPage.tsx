@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import Button from "../../components/common/Button/Button"
 import Input from "../../components/common/Input/Input"
+import { useAppSelector } from "../../hooks/redux"
 
 const AuthorizationPage = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +12,7 @@ const AuthorizationPage = () => {
   const navigate = useNavigate()
 
   const { email, password } = formData
+  const isThemeBlack = useAppSelector((s) => s.isThemeBlack)
 
   const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -24,7 +26,7 @@ const AuthorizationPage = () => {
           Welcome back, You have been missed!
         </h2>
       </div>
-      <div className="authorization__mid">
+      <div className={`authorization__mid ${isThemeBlack && "_black-light"}`}>
         <Input
           placeholder={"Your Email"}
           value={email}

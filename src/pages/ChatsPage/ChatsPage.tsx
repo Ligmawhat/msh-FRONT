@@ -18,24 +18,28 @@ const ChatsPage: FC = () => {
     chat && console.log(chat)
   }, [])
   const currentHandler = (n: number) => setCurrent(n)
-
+  const isThemeBlack = useAppSelector((s) => s.isThemeBlack)
   return (
-    <div className="chats">
-      <div className="chats__left contacts">
-        <div className="contacts">
+    <div className={`chats ${isThemeBlack && "_black-light"}`}>
+      <div className={`chats__left contacts ${isThemeBlack && "_black"}`}>
+        <div className={`contacts ${isThemeBlack && "_black"}`}>
           <div className="contacts__top">
             <Input placeholder="Search" />
           </div>
           <div className="contacts__bottom">
-            {chat &&
-              chat.map((el) => (
+            {arr &&
+              arr.map((el) => (
                 <div
                   key={el}
                   onClick={() => currentHandler(el)}
                   className={
                     el === current
-                      ? "contacts__item contact contact--active"
-                      : "contacts__item contact"
+                      ? `contact ${
+                          isThemeBlack
+                            ? "contact--activeblack"
+                            : "contact--active"
+                        } ${isThemeBlack && "contact--black"}`
+                      : `contact ${isThemeBlack && "contact--black"}`
                   }
                 >
                   <img src={d4rsen} alt="contact" className="contact__img" />
@@ -56,7 +60,7 @@ const ChatsPage: FC = () => {
           </div>
         </div>
       </div>
-      <div className="chats__right messages">
+      <div className={`chats__right messages ${isThemeBlack && "_black"}`}>
         <div className="messages__top">
           <img
             src={d4rsen}

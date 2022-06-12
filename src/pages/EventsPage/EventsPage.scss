@@ -60,7 +60,7 @@
     background-color: $--light-white;
     width: 50%;
     height: 100%;
-    border-radius: 30px;
+    //border-radius: 30px;
     border: 0 solid transparent;
     overflow-y: scroll;
     padding: 50px 0 150px 0;
@@ -146,8 +146,7 @@
     border-radius: $--border-radius;
     cursor: pointer;
     transition: $--transition;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     @include mobile {
       width: 220px;
       height: 150px;

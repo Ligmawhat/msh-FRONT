@@ -1,4 +1,3 @@
-import { rootReducer } from "../redux/reducers/root/rootReducer"
 import { store } from "../redux/store/store"
 import { IChat } from "./chat"
 import { IMessage } from "./message"
@@ -21,11 +20,13 @@ export type oneFilter = {
   title: string
   type: filterType
 }
+
 export interface IInitState {
   user: IUser | null
   filters: oneFilter[]
   chat: IChat[] | null
   message: IMessage[] | null
+  isThemeBlack: boolean
 }
 
 export enum UserActions {
@@ -39,10 +40,16 @@ export enum FilterActions {
   SET_ERROR = "SET_ERROR",
 }
 
+export enum ThemeActions {
+  THEME_BLACK = "THEME_BLACK",
+  THEME_WHITE = "THEME_WHITE",
+}
+
 export enum ChatActions {
   CREATE_CHAT_SOCKET = "CREATE_CHAT_SOCKET",
   GIVE_CHAT_SOCKET = "GIVE_CHAT_SOCKET",
 }
+
 export enum MessageActions {
   SEND_MESSAGE_SOCKET = "SEND_MESSAGE_SOCKET",
 }

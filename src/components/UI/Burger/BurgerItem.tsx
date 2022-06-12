@@ -1,4 +1,5 @@
 import React, { FC } from "react"
+import { useAppSelector } from "../../../hooks/redux"
 
 interface BurgerItemProps {
   closeHandler: () => void
@@ -13,6 +14,7 @@ const BurgerItem: FC<BurgerItemProps> = ({
   imgLink,
   text,
 }) => {
+  const isThemeBlack = useAppSelector((s) => s.isThemeBlack)
   return (
     <div
       role="navigation"
@@ -21,7 +23,9 @@ const BurgerItem: FC<BurgerItemProps> = ({
     >
       <span onClick={() => navigate("/")}>
         <img src={imgLink} alt="nav icon" className="item__icon" />
-        <div className="item__text">{text}</div>
+        <div className={`item__text item__text${isThemeBlack && "--white"}`}>
+          {text}
+        </div>
       </span>
     </div>
   )

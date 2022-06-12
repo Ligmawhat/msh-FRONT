@@ -8,7 +8,7 @@
   flex-direction: column;
   color: $--text-color-dark;
   gap: 30px;
-  height: 100vh;
+  height: 100vh - $--nav-height;
 
   @include miniMobile {
     padding: 20px;
@@ -66,12 +66,11 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    padding: 100px;
+    padding: 60px;
     background-color: $--white;
     gap: 20px;
     border-radius: 30px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-
     @include miniMobile {
       padding: 20px;
       width: 80vw;

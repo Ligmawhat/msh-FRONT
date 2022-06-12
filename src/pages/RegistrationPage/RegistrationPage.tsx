@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 import Button from "../../components/common/Button/Button"
 import Input from "../../components/common/Input/Input"
 import "./RegistrationPage.scss"
+import { useAppSelector } from "../../hooks/redux"
 
 const RegistrationPage: FC = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +11,7 @@ const RegistrationPage: FC = () => {
     name: "",
     password: "",
   })
+  const isThemeBlack = useAppSelector((s) => s.isThemeBlack)
   const navigate = useNavigate()
 
   const { email, name, password } = formData
@@ -26,7 +28,7 @@ const RegistrationPage: FC = () => {
           Create an account and connect with the people
         </h2>
       </div>
-      <div className="authorization__mid">
+      <div className={`authorization__mid ${isThemeBlack && "_black-light"}`}>
         <Input
           placeholder={"Your Email"}
           value={email}
