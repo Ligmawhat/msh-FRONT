@@ -3,8 +3,8 @@
 .background-video {
   position: absolute;
   top: 0;
-  min-width: 100%;
-  min-height: 100%;
+  min-width: 100vw;
+  min-height: 100vh;
   z-index: 0;
   opacity: 0.3;
 }
@@ -16,8 +16,8 @@
   align-items: center;
   flex-direction: column;
   gap: 100px;
-  padding: 100px 0;
-  height: 100vh;
+  padding: 100px 50px;
+  height: 100vh - $--nav-height;
 
   &__landing {
     position: relative;
@@ -40,6 +40,15 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 50px;
   border-radius: 20px;
+
+  @include mobile {
+    padding: 20px 30px;
+    gap: 30px;
+  }
+  @include miniMobile {
+    padding: 20px 30px;
+    gap: 30px;
+  }
 
   &__title {
     font-size: $--fz-heading;

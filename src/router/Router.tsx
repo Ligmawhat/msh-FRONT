@@ -39,6 +39,10 @@ const Router: FC = () => {
         path={routes.profileInfo.path}
         element={routes.profileInfo.component}
       />
+      <Route
+        path={routes.chatsPage.path}
+        element={routes.chatsPage.component}
+      />
     </Routes>
   )
 }

@@ -1,11 +1,9 @@
 import React, { FC } from "react"
 import "./EventsPage.scss"
 import Button from "../../components/common/Button/Button"
+import EventsMap from "../../components/common/EventsMap/EventsMap"
 import EventsFilter from "../../components/EventsFilter/EventsFIlter"
 import { mockEvents } from "../../mocks/events"
-
-const filterUrl =
-  "https://cdn0.iconfinder.com/data/icons/glyphpack/36/filter-512.png"
 
 const EventsPage: FC = () => {
   return (
@@ -34,13 +32,13 @@ const EventsPage: FC = () => {
                   ))}
                 </div>
               </div>
-              <div className="events__button">
-                <Button text={"Помочь"} onClick={() => null} />
-              </div>
+              <Button width={250} text={"Помочь"} onClick={() => null} />
             </div>
           ))}
       </div>
-      <aside className="events__right">Тут карта</aside>
+      <aside className="events__right">
+        <EventsMap />
+      </aside>
     </div>
   )
 }

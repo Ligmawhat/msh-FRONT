@@ -2,11 +2,7 @@ import { AnyAction } from "redux"
 import { IAction, IInitState, UserActions } from "../../models/redux"
 import { initState } from "../init/initState"
 
-export const userReducer = (
-  state: IInitState = initState,
-  // eslint-disable-next-line prettier/prettier
-  action: AnyAction
-) => {
+export const userReducer = (state = initState.user, action: AnyAction) => {
   switch (action.type) {
     case UserActions.SET_USER:
       return action.payload
