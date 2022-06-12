@@ -3,6 +3,7 @@ import EventsMap from "../components/common/Map/Map"
 import TmpCalendarCall from "../components/TmpCalendarModal/tmpCalendarCall/tmpCalendarCall"
 import TmpUpload from "../components/tmpUpload/TmpUpload"
 import AuthorizationPage from "../pages/AuthorizationPage/AuthorizationPage"
+import ChatsPage from "../pages/ChatsPage/ChatsPage"
 import EventsPage from "../pages/EventsPage/EventsPage"
 import MainPage from "../pages/MainPage/MainPage"
 import NotFoundPage from "../pages/NotFound/NotFoundPage"
@@ -40,5 +41,9 @@ export const routes = {
   tmpModal: {
     path: "/modal",
     component: <TmpCalendarCall />,
+  },
+  chatsPage: {
+    path: "/chats",
+    component: <ChatsPage />,
   },
 }

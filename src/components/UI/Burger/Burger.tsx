@@ -7,6 +7,7 @@ const homeLink = "https://cdn-icons-png.flaticon.com/512/25/25694.png"
 const eventsLink = "https://cdn-icons-png.flaticon.com/512/48/48732.png"
 const registrationLink =
   "https://uxwing.com/wp-content/themes/uxwing/download/03-editing-user-action/new-registration.png"
+const chatsLink = "https://cdn-icons-png.flaticon.com/512/1380/1380370.png"
 
 interface BurgerProps {
   menuOpen: boolean
@@ -39,6 +40,12 @@ const Burger: FC<BurgerProps> = ({ menuOpen, setMenuOpen }) => {
             navigate={() => navigate("/events")}
             imgLink={eventsLink}
             text={"Events"}
+          />
+          <BurgerItem
+            closeHandler={closeHandler}
+            navigate={() => navigate("/chats")}
+            imgLink={chatsLink}
+            text={"Chats"}
           />
           <BurgerItem
             closeHandler={closeHandler}

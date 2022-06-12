@@ -31,6 +31,10 @@ const Router: FC = () => {
         element={routes.authorizationPage.component}
       />
       <Route path={routes.tmpModal.path} element={routes.tmpModal.component} />
+      <Route
+        path={routes.chatsPage.path}
+        element={routes.chatsPage.component}
+      />
     </Routes>
   )
 }
