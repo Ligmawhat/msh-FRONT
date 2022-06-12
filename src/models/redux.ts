@@ -42,9 +42,12 @@ export enum FilterActions {
 export enum ChatActions {
   CREATE_CHAT_SOCKET = "CREATE_CHAT_SOCKET",
   GIVE_CHAT_SOCKET = "GIVE_CHAT_SOCKET",
+  GIVE_CHATS = "GIVE_CHATS",
 }
 export enum MessageActions {
   SEND_MESSAGE_SOCKET = "SEND_MESSAGE_SOCKET",
+  GIVE_CHAT_SOCKET = "GIVE_CHAT_SOCKET",
+  SEND_MESSAGE = "SEND_MESSAGE",
 }
 
 export type category = {

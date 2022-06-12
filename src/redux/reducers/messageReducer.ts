@@ -15,6 +15,13 @@ export const messageReducer = (
         return state
       }
 
+    case MessageActions.SEND_MESSAGE:
+      if (state != null) {
+        return [...state, action.payload]
+      } else {
+        return state
+      }
+
     default:
       return state
   }

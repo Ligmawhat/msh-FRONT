@@ -15,6 +15,9 @@ export const chatReducer = (
         return state
       }
 
+    case ChatActions.GIVE_CHATS:
+      return action.payload
+
     default:
       return state
   }
