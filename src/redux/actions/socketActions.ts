@@ -1,7 +1,8 @@
-import { ChatActions, MessageActions } from "../../models/redux"
 import { IChat } from "../../models/chat"
+import { IMessage } from "../../models/message"
+import { ChatActions, MessageActions } from "../../models/redux"
 
-export const ACTION_send_message_socket = (messageData: IChat) => ({
+export const ACTION_send_message_socket = (messageData: IMessage) => ({
   type: MessageActions.SEND_MESSAGE_SOCKET,
   payload: messageData,
 })
