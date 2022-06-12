@@ -2,13 +2,14 @@ import React, { useEffect, useRef } from "react"
 import { useNavigate } from "react-router-dom"
 import Header from "../components/UI/Header/Header"
 import "./App.scss"
-import { useAppDispatch } from "../hooks/redux"
+import { useAppDispatch, useAppSelector } from "../hooks/redux"
 import Router from "../router/Router"
 import { createSocketOnMessage } from "../utils/socket.message"
 
 function App() {
   const dispatch = useAppDispatch()
   const url = process.env.REACT_APP_URL_SOCKET
+  const isThemeBlack = useAppSelector((state) => state.isThemeBlack)
   const socket = useRef<WebSocket>()
   const navigate = useNavigate()
   // const user = useAppSelector((state) => state.user)
@@ -20,7 +21,7 @@ function App() {
       socket.current = new WebSocket(url as string)
       socket.current.onmessage = createSocketOnMessage(dispatch)
       socket.current.onclose = () => {
-        alert("server close ws connection. Try again later")
+        console.log("server close ws connection. Try again later")
         navigate("/")
       }
     }
@@ -34,7 +35,7 @@ function App() {
   }, [])
 
   return (
-    <div className="wrapper">
+    <div className={`wrapper ${isThemeBlack && "_black"}`}>
       <Header />
       <main className="main">
         <Router />
