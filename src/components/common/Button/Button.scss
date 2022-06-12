@@ -22,6 +22,21 @@
     border: 1px solid $--blue;
   }
 
+  &--transparent {
+    background-color: $--white;
+    color: $--blue;
+  }
+
+  &--clicked {
+    background-color: $--blue;
+    color: $--white;
+
+    &:hover {
+      background-color: $--blue;
+      color: $--white;
+    }
+  }
+
   &--disabled {
     opacity: 0.5;
 

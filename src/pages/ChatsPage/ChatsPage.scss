@@ -10,6 +10,17 @@
   padding: 30px 30px;
   background-color: $--light-white;
   position: relative;
+
+  @include mobile {
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+  }
+  @include miniMobile {
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+  }
 }
 
 .contacts {
@@ -26,11 +37,30 @@
   width: 100%;
   max-width: 350px;
   gap: 20px;
+  transition: $--transition;
+
+  @include mobile {
+    flex-direction: row;
+    height: 100%;
+    overflow-y: unset;
+  }
+  @include miniMobile {
+    flex-direction: row;
+    height: 100%;
+    overflow-y: unset;
+  }
 
   &__top {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @include mobile {
+      display: none
+    }
+    @include miniMobile {
+      display: none
+    }
   }
 
   &__bottom {
@@ -41,6 +71,15 @@
     flex-direction: column;
     overflow-y: scroll;
     gap: 5px;
+    width: 100%;
+    height: 100%;
+
+    @include mobile {
+      flex-direction: row;
+    }
+    @include miniMobile {
+      flex-direction: row;
+    }
 
     &::-webkit-scrollbar {
       display: none;
@@ -54,10 +93,23 @@
   align-items: center;
   gap: 20px;
   width: 100%;
+  height: 100%;
   padding: 10px 15px;
   border-radius: 12px;
   transition: $--transition;
   cursor: pointer;
+
+  @include mobile {
+    justify-content: center;
+    padding: 4px;
+    min-width: 25%;
+  }
+  @include miniMobile {
+    justify-content: center;
+    padding: 4px;
+    min-width: 25%;
+  }
+
 
   &:hover {
     background-color: $--light-white;
@@ -101,6 +153,15 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+    @include mobile {
+      display: none;
+    }
+    @include miniMobile {
+      display: none;
+    }
   }
 
   &__right {
@@ -110,6 +171,13 @@
     flex-direction: column;
     gap: 10px;
     white-space: nowrap;
+
+    @include mobile {
+      display: none;
+    }
+    @include miniMobile {
+      display: none;
+    }
   }
 
   &__time {
