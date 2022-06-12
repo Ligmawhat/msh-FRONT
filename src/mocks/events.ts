@@ -120,5 +120,8 @@ export const categories: category[] = [
     active: false,
     title: "помощь",
   },
-  { name: "long", active: false, title: "помощь" },
+  { name: "long", active: false, title: "поиск" },
+  { name: "trip", active: false, title: "путешествие" },
+  { name: "money", active: false, title: "сбор пожертвований" },
+  { name: "closest", active: false, title: "ближайшие" },
 ]
