@@ -2,6 +2,8 @@ import { filterType, IInitState } from "../../models/redux"
 
 export const initState: IInitState = {
   user: null,
+  chat: null,
+  message: null,
   filters: [
     {
       name: "categories",
