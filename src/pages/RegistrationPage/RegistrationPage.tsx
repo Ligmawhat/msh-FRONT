@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 import Button from "../../components/common/Button/Button"
 import Input from "../../components/common/Input/Input"
 import "./RegistrationPage.scss"
-import { useAppDispatch } from "../../hooks/redux"
+import { useAppDispatch, useAppSelector } from "../../hooks/redux"
 import { ACTION_setCurrUser } from "../../redux/actions/currUserActions"
 
 const RegistrationPage: FC = () => {
@@ -14,6 +14,7 @@ const RegistrationPage: FC = () => {
     name: "",
     password: "",
   })
+  const isThemeBlack = useAppSelector((s) => s.isThemeBlack)
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
 
@@ -68,7 +69,7 @@ const RegistrationPage: FC = () => {
           Create an account and connect with the people
         </h2>
       </div>
-      <div className="authorization__mid">
+      <div className={`authorization__mid ${isThemeBlack && "_black-light"}`}>
         <Input
           placeholder={"Your Email"}
           value={email}

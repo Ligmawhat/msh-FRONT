@@ -1,28 +1,11 @@
 import React from "react"
+import { projectsMock } from "../../mocks/userProfile"
 
 function Projects() {
-  const projectsMock = [
-    {
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png",
-      title: "first",
-      desc: "descsesc",
-    },
-    {
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png",
-      title: "first",
-      desc: "descsesc",
-    },
-    {
-      img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png",
-      title: "first",
-      desc: "descsesc",
-    },
-  ]
-
   return (
-    <div>
+    <div style={{ display: "flex" }}>
       {projectsMock.map((project) => (
-        <>
+        <div key={project.id} style={{ display: "flex" }}>
           <div className="logo">
             <img src={project.img} width="100" height="100" />{" "}
           </div>
@@ -34,7 +17,7 @@ function Projects() {
             {" "}
             <p> {project.desc}</p>{" "}
           </div>
-        </>
+        </div>
       ))}
     </div>
   )

@@ -1,6 +1,6 @@
-import { rootReducer } from "../redux/reducers/root/rootReducer"
 import { store } from "../redux/store/store"
 import { IChat } from "./chat"
+import { IEvent } from "./event"
 import { IMessage } from "./message"
 import { IUser } from "./user"
 
@@ -18,6 +18,13 @@ export enum filterType {
   buttons = "BUTTONS",
   search = "SEARCH",
   checkbox = "CHECKBOX",
+  select = "SELECT",
+}
+
+export enum urgencyType {
+  urgent = "URGENT",
+  week = "WEEK",
+  month = "MONTH",
 }
 
 export type oneFilter = {
@@ -26,12 +33,15 @@ export type oneFilter = {
   title: string
   type: filterType
 }
+
 export interface IInitState {
   user: IUser | null
   currUser: any
   filters: oneFilter[]
   chat: IChat[] | null
   message: IMessage[] | null
+  events: IEvent[]
+  isThemeBlack: boolean
 }
 
 export enum UserActions {
@@ -45,12 +55,24 @@ export enum FilterActions {
   SET_ERROR = "SET_ERROR",
 }
 
+export enum ThemeActions {
+  THEME_BLACK = "THEME_BLACK",
+  THEME_WHITE = "THEME_WHITE",
+}
+
 export enum ChatActions {
   CREATE_CHAT_SOCKET = "CREATE_CHAT_SOCKET",
   GIVE_CHAT_SOCKET = "GIVE_CHAT_SOCKET",
 }
+
 export enum MessageActions {
   SEND_MESSAGE_SOCKET = "SEND_MESSAGE_SOCKET",
+}
+
+export enum EventActions {
+  SET_EVENTS = "SET_EVENTS",
+  SET_LOADING = "SET_LOADING",
+  SET_ERROR = "SET_ERROR",
 }
 
 export type category = {

@@ -3,6 +3,6 @@ import { IMessage } from "./message"
 
 export interface IChat {
   type: string
-  contetnt: IMessage[]
+  content: IMessage[]
   listOfUsers: IListOfUsers[]
 }
