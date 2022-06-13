@@ -50,7 +50,7 @@ export default function LocationFilter() {
       sx={{ width: 300 }}
       renderInput={(params) => {
         handleChange(`${params.inputProps.value}`)
-        return <TextField {...params} label="With categories" />
+        return <TextField {...params} label="Местоположение" />
       }}
     />
   )

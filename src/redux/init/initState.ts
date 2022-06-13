@@ -3,11 +3,12 @@ import { filterType, IInitState } from "../../models/redux"
 export const initState: IInitState = {
   user: null,
   chat: null,
+  events: [],
   message: null,
   isThemeBlack: false,
   filters: [
     {
-      name: "categories",
+      name: "category",
       value: null,
       title: "Категории",
       type: filterType.buttons,
@@ -19,10 +20,10 @@ export const initState: IInitState = {
       type: filterType.search,
     },
     {
-      name: "urgent",
+      name: "urgency",
       value: null,
       title: "Срочность",
-      type: filterType.checkbox,
+      type: filterType.select,
     },
   ],
 }
