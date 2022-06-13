@@ -9,6 +9,8 @@ export const userReducer = (state = initState.user, action: AnyAction) => {
 
     case UserActions.UNSET_USER:
       return null
+    case UserActions.UNSET_USER:
+      return null
     default:
       return state
   }

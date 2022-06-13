@@ -4,6 +4,7 @@ export const initState: IInitState = {
   user: null,
   currUser: null,
   chat: null,
+  role: null,
   events: [],
   message: null,
   isThemeBlack: false,

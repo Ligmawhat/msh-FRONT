@@ -9,9 +9,14 @@ export interface IAction {
   payload?: any
 }
 
+export enum Role {
+  SET_ROLE = "SET_ROLE",
+}
+
 export enum CurrUserActions {
   SET_CURR_USER = "SET_CURR_USER",
   LOGOUT_USER = "LOGOUT_USER",
+  SET_ROLE = "SET_ROLE",
 }
 
 export enum filterType {
@@ -37,6 +42,7 @@ export type oneFilter = {
 export interface IInitState {
   user: IUser | null
   currUser: any
+  role: any
   filters: oneFilter[]
   chat: IChat[] | null
   message: IMessage[] | null
