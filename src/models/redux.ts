@@ -9,6 +9,11 @@ export interface IAction {
   payload?: any
 }
 
+export enum CurrUserActions {
+  SET_CURR_USER = "SET_CURR_USER",
+  LOGOUT_USER = "LOGOUT_USER",
+}
+
 export enum filterType {
   buttons = "BUTTONS",
   search = "SEARCH",
@@ -23,6 +28,7 @@ export type oneFilter = {
 }
 export interface IInitState {
   user: IUser | null
+  currUser: any
   filters: oneFilter[]
   chat: IChat[] | null
   message: IMessage[] | null

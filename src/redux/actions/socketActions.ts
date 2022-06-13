@@ -1,5 +1,5 @@
-import { ChatActions, MessageActions } from "../../models/redux"
 import { IChat } from "../../models/chat"
+import { ChatActions, MessageActions } from "../../models/redux"
 
 export const ACTION_send_message_socket = (messageData: IChat) => ({
   type: MessageActions.SEND_MESSAGE_SOCKET,
