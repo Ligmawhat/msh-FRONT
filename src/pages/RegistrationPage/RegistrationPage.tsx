@@ -29,10 +29,9 @@ const RegistrationPage: FC = () => {
       method: "post",
       data: formData,
       withCredentials: true,
-      url: "/user/registration",
+      url: `${process.env.REACT_APP_CLIENT_URL}/user/registration`,
     }).then((res) => {
       if (res?.data?.user?.id) {
-        console.log(res.data.user.id, res.data.user.email)
         // localStorage.setItem("user", JSON.stringify(res.data)),
         navigate("/events")
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
