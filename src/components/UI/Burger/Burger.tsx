@@ -57,28 +57,12 @@ const Burger: FC<BurgerProps> = ({ menuOpen, setMenuOpen }) => {
             imgLink={chatsLink}
             text={"Chats"}
           />
-          {!user && (
-            <>
-              <BurgerItem
-                closeHandler={closeHandler}
-                navigate={() => navigate("/register")}
-                imgLink={registrationLink}
-                text={"Sign Up"}
-              />
-              <BurgerItem
-                closeHandler={closeHandler}
-                navigate={() => navigate("/login")}
-                imgLink={registrationLink}
-                text={"Sign In"}
-              />
-            </>
-          )}
           {user && (
             <BurgerItem
               closeHandler={closeHandler}
-              navigate={() => navigate("/logout")}
+              navigate={() => navigate("/profile")}
               imgLink={registrationLink}
-              text={"Logout"}
+              text={"Profile"}
             />
           )}
         </div>
