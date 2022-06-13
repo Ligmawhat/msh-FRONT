@@ -9,6 +9,8 @@ export const currUserReducer = (
   switch (action.type) {
     case CurrUserActions.SET_CURR_USER:
       return action.payload
+    case CurrUserActions.LOGOUT_USER:
+      return {}
     default:
       return state
   }

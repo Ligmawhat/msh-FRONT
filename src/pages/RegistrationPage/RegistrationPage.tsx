@@ -14,6 +14,8 @@ const RegistrationPage: FC = () => {
     password: "",
   })
   const isThemeBlack = useAppSelector((s) => s.isThemeBlack)
+  const role = useAppSelector((state) => state.role)
+
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
 
@@ -28,8 +30,11 @@ const RegistrationPage: FC = () => {
       method: "post",
       data: formData,
       withCredentials: true,
-      url: `${process.env.REACT_APP_CLIENT_URL}/user/registration`,
+      url: `${process.env.REACT_APP_CLIENT_URL}/${
+        role === "VOLUNTEER" ? "user" : "company"
+      }/registration`,
     }).then((res) => {
+      console.log(res?.data)
       if (res?.data?.user?.id) {
         // localStorage.setItem("user", JSON.stringify(res.data)),
         navigate("/events")

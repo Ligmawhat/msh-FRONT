@@ -24,6 +24,8 @@ const Burger: FC<BurgerProps> = ({ menuOpen, setMenuOpen }) => {
   }, [])
   const isThemeBlack = useAppSelector((s) => s.isThemeBlack)
 
+  const user = useAppSelector((state) => state.currUser)
+
   return (
     <div className={`right__burger burger ${isThemeBlack && "_black"}`}>
       <aside>
@@ -55,18 +57,30 @@ const Burger: FC<BurgerProps> = ({ menuOpen, setMenuOpen }) => {
             imgLink={chatsLink}
             text={"Chats"}
           />
-          <BurgerItem
-            closeHandler={closeHandler}
-            navigate={() => navigate("/register")}
-            imgLink={registrationLink}
-            text={"Sign Up"}
-          />
-          <BurgerItem
-            closeHandler={closeHandler}
-            navigate={() => navigate("/login")}
-            imgLink={registrationLink}
-            text={"Sign In"}
-          />
+          {!user && (
+            <>
+              <BurgerItem
+                closeHandler={closeHandler}
+                navigate={() => navigate("/register")}
+                imgLink={registrationLink}
+                text={"Sign Up"}
+              />
+              <BurgerItem
+                closeHandler={closeHandler}
+                navigate={() => navigate("/login")}
+                imgLink={registrationLink}
+                text={"Sign In"}
+              />
+            </>
+          )}
+          {user && (
+            <BurgerItem
+              closeHandler={closeHandler}
+              navigate={() => navigate("/logout")}
+              imgLink={registrationLink}
+              text={"Logout"}
+            />
+          )}
         </div>
       </aside>
     </div>
