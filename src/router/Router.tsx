@@ -32,6 +32,14 @@ const Router: FC = () => {
       />
       <Route path={routes.tmpModal.path} element={routes.tmpModal.component} />
       <Route
+        path={routes.profileRoutes.path}
+        element={routes.profileRoutes.component}
+      />
+      <Route
+        path={routes.profileInfo.path}
+        element={routes.profileInfo.component}
+      />
+      <Route
         path={routes.chatsPage.path}
         element={routes.chatsPage.component}
       />

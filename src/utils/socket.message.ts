@@ -1,9 +1,9 @@
 import { AppDispatch, ChatActions, MessageActions } from "../models/redux"
 
 import {
-  ACTION_send_message_socket,
   ACTION_create_chat_socket,
   ACTION_give_chat_socket,
+  ACTION_send_message_socket,
 } from "../redux/actions/socketActions"
 
 export const createSocketOnMessage =

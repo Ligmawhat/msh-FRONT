@@ -1,6 +1,7 @@
 import { combineReducers } from "redux"
 import { chatReducer } from "../chatReducer"
 import { eventReducer } from "../eventReducer"
+import { isThemeBlackReducer } from "../isThemeBlackReducer"
 import { messageReducer } from "../messageReducer"
 import { userReducer } from "../userReducer"
 import { filterReducer } from "./../filterReducer"
@@ -11,4 +12,5 @@ export const rootReducer = combineReducers({
   chat: chatReducer,
   message: messageReducer,
   filters: filterReducer,
+  isThemeBlack: isThemeBlackReducer,
 })

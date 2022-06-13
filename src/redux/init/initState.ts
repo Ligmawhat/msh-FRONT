@@ -5,6 +5,7 @@ export const initState: IInitState = {
   chat: null,
   events: [],
   message: null,
+  isThemeBlack: false,
   filters: [
     {
       name: "category",

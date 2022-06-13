@@ -7,6 +7,8 @@ import ChatsPage from "../pages/ChatsPage/ChatsPage"
 import EventsPage from "../pages/EventsPage/EventsPage"
 import MainPage from "../pages/MainPage/MainPage"
 import NotFoundPage from "../pages/NotFound/NotFoundPage"
+import ProfileRoutes from "../pages/Profile/ProfileRoutes"
+import UserCard from "../pages/Profile/UserCard"
 import RegistrationPage from "../pages/RegistrationPage/RegistrationPage"
 
 export const routes = {
@@ -41,6 +43,14 @@ export const routes = {
   tmpModal: {
     path: "/modal",
     component: <TmpCalendarCall />,
+  },
+  profileRoutes: {
+    path: "/profile",
+    component: <ProfileRoutes />,
+  },
+  profileInfo: {
+    path: "/profile/info",
+    component: <UserCard />,
   },
   chatsPage: {
     path: "/chats",
