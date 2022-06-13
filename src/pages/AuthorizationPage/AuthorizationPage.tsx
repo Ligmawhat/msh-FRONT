@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom"
 import Button from "../../components/common/Button/Button"
 import Input from "../../components/common/Input/Input"
 import { useAppSelector } from "../../hooks/redux"
+import { ACTION_setCurrUser } from "../../redux/actions/currUserActions"
 
 const AuthorizationPage = () => {
   const [formData, setFormData] = useState({
@@ -27,8 +28,8 @@ const AuthorizationPage = () => {
       url: `/user/login`,
     }).then((res) => {
       if (res?.data?.user?.id) {
-        // localStorage.setItem("user", JSON.stringify(res.data)),
-        navigate("/events")
+        localStorage.setItem("user", JSON.stringify(res.data.user)),
+          navigate("/events")
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         //@ts-ignore
         dispatch(ACTION_setCurrUser(res.data.user.id, res.data.user.email))
