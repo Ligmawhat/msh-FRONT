@@ -35,6 +35,7 @@ export const getEvents =
       //   { withCredentials: true },
       // )
       const eventsResponse = response.data.allEvents
+      console.log(eventsResponse)
       const events: IEvent[] = eventsResponse.map((el: any, index: any) => {
         return { ...el } as IEvent
       })
