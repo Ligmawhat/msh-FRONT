@@ -30,11 +30,9 @@ export const getFilters =
     try {
       dispatch(setLoading())
 
-      const response = await axios.get(
-        `${process.env.REACT_APP_CLIENT_URL}/event/getAllCategories`,
-        { withCredentials: true },
-      )
-      console.log(response)
+      const response = await axios.get(`/event/getAllCategories`, {
+        withCredentials: true,
+      })
       const categoriesResponse = response.data.allCategories
       const categories: category[] = categoriesResponse.map(
         (el: { value: any }, index: any) => {

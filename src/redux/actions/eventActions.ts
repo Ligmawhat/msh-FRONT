@@ -22,11 +22,10 @@ export const getEvents =
   (filters?: oneFilter[]): ThunkAction<void, RootState, unknown, AnyAction> =>
   async (dispatch) => {
     try {
-      console.log("FIIILTERS", filters)
       dispatch(setLoading())
       const response = await axios({
         method: "POST",
-        url: `${process.env.REACT_APP_CLIENT_URL}/event/getAllEvents`,
+        url: `/event/getAllEvents`,
         data: { filters },
         withCredentials: true,
       })

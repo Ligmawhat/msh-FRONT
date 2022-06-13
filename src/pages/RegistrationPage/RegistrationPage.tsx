@@ -28,7 +28,7 @@ const RegistrationPage: FC = () => {
       method: "post",
       data: formData,
       withCredentials: true,
-      url: `${process.env.REACT_APP_CLIENT_URL}/user/registration`,
+      url: `/user/registration`,
     }).then((res) => {
       if (res?.data?.user?.id) {
         // localStorage.setItem("user", JSON.stringify(res.data)),
