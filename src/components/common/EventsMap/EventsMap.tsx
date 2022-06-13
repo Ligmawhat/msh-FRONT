@@ -1,35 +1,11 @@
 import * as React from "react"
 import { Clusterer, Map, Placemark, YMaps } from "react-yandex-maps"
 
-type places = {
-  latitude: number
-  longitude: number
+type Props = {
+  coordinates: any[]
 }
 
-const allPlaces: places[] = [
-  {
-    latitude: 50.5,
-    longitude: 43,
-  },
-  {
-    latitude: 50.55,
-    longitude: 43,
-  },
-  {
-    latitude: 50.6,
-    longitude: 43,
-  },
-  {
-    latitude: 50.65,
-    longitude: 43,
-  },
-  {
-    latitude: 50.7,
-    longitude: 43,
-  },
-]
-
-const EventsMap: React.FC = () => {
+const EventsMap: React.FC<Props> = ({ coordinates }) => {
   return (
     <YMaps
       query={{
@@ -47,7 +23,7 @@ const EventsMap: React.FC = () => {
         modules={["control.ZoomControl", "control.FullscreenControl"]}
       >
         <Clusterer>
-          {allPlaces.map(({ longitude, latitude }, index) => {
+          {coordinates.map(({ longitude, latitude }, index) => {
             return (
               <Placemark
                 key={index}

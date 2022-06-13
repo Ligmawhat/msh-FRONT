@@ -24,10 +24,6 @@ export const routes = {
     path: "/events",
     component: <EventsPage />,
   },
-  eventsMap: {
-    path: "/eventsMap",
-    component: <EventsMap />,
-  },
   registrationPage: {
     path: "/register",
     component: <RegistrationPage />,

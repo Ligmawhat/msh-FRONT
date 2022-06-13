@@ -14,6 +14,10 @@ const EventsPage: FC = () => {
   })
   const dispatch = useAppDispatch()
   const allEvents: IEvent[] = useAppSelector((state) => state.events)
+  const coordinates = allEvents.map((el) => {
+    const splitted = el.coordinates.split(", ")
+    return { latitude: splitted[0], longitude: splitted[1] }
+  })
 
   useEffect(() => {
     dispatch(getEvents(filters))
@@ -57,7 +61,7 @@ const EventsPage: FC = () => {
           ))}
       </div>
       <aside className="events__right">
-        <EventsMap />
+        <EventsMap coordinates={coordinates} />
       </aside>
     </div>
   )

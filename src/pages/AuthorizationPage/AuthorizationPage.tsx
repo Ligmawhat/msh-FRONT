@@ -25,7 +25,7 @@ const AuthorizationPage = () => {
       method: "post",
       data: formData,
       withCredentials: true,
-      url: `${process.env.REACT_APP_CLIENT_URL}/user/login`,
+      url: `/user/login`,
     }).then((res) => {
       if (res?.data?.user?.id) {
         localStorage.setItem("user", JSON.stringify(res.data.user)),

@@ -30,9 +30,7 @@ const RegistrationPage: FC = () => {
       method: "post",
       data: formData,
       withCredentials: true,
-      url: `${process.env.REACT_APP_CLIENT_URL}/${
-        role === "VOLUNTEER" ? "user" : "company"
-      }/registration`,
+      url: `/${role === "VOLUNTEER" ? "user" : "company"}/registration`,
     }).then((res) => {
       console.log(res?.data)
       if (res?.data?.user?.id) {
