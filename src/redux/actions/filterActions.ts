@@ -31,7 +31,7 @@ export const getFilters =
       dispatch(setLoading())
 
       const response = await axios.get(
-        `${process.env.REACT_APP_API_URL}/event/getAllCategories`,
+        `${process.env.REACT_APP_CLIENT_URL}/event/getAllCategories`,
         { withCredentials: true },
       )
       console.log(response)

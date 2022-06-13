@@ -38,11 +38,13 @@ export default function TmpUpload() {
 
   const uploadImage = async (base64EncodedImage: any) => {
     try {
-      await fetch("/api/upload", {
+      const response = await fetch("/api/upload", {
         method: "POST",
         body: JSON.stringify({ data: base64EncodedImage }),
         headers: { "Content-Type": "application/json" },
       })
+      const json = await response.json()
+      console.log("Успех:", JSON.stringify(json))
       setFileInputState("")
       setPreviewSource("")
       setSuccessMsg("Image uploaded successfully")

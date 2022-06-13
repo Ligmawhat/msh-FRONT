@@ -26,7 +26,7 @@ export const getEvents =
       dispatch(setLoading())
       const response = await axios({
         method: "POST",
-        url: `${process.env.REACT_APP_API_URL}/event/getAllEvents`,
+        url: `${process.env.REACT_APP_CLIENT_URL}/event/getAllEvents`,
         data: { filters },
         withCredentials: true,
       })
