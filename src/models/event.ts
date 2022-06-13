@@ -4,6 +4,7 @@ export interface IEvent {
   type: string
   title: string
   category: string
+  category_id?: number
   location: string
   date_and_time: string
   application_response_email: string
