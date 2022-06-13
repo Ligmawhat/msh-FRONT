@@ -1,4 +1,4 @@
-import { AnyAction } from 'redux';
+import { AnyAction } from "redux"
 import { FilterActions, IInitState } from "../../models/redux"
 import { initState } from "../init/initState"
 
@@ -14,4 +14,3 @@ export const filterReducer = (
       return state
   }
 }
-  
