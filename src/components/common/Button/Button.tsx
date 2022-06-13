@@ -22,7 +22,7 @@ const Button: FC<ButtonProps> = ({
       className={disabled ? "button button--disabled" : "button"}
       type={type}
       onClick={onClick}
-      style={{ maxWidth: `${width}` }}
+      style={{ maxWidth: `${width}px` }}
     >
       {text}
     </button>

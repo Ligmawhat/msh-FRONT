@@ -1,8 +1,11 @@
 import React, { FC, useState } from "react"
+import axios from "axios"
 import { useNavigate } from "react-router-dom"
 import Button from "../../components/common/Button/Button"
 import Input from "../../components/common/Input/Input"
 import "./RegistrationPage.scss"
+import { useAppDispatch, useAppSelector } from "../../hooks/redux"
+import { ACTION_setCurrUser } from "../../redux/actions/currUserActions"
 
 const RegistrationPage: FC = () => {
   const [formData, setFormData] = useState({
@@ -10,13 +13,51 @@ const RegistrationPage: FC = () => {
     name: "",
     password: "",
   })
+  const isThemeBlack = useAppSelector((s) => s.isThemeBlack)
   const navigate = useNavigate()
+  const dispatch = useAppDispatch()
 
   const { email, name, password } = formData
 
   const onChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
+
+  const register = () => {
+    axios({
+      method: "post",
+      data: formData,
+      withCredentials: true,
+      url: `${process.env.REACT_APP_CLIENT_URL}/user/registration`,
+    }).then((res) => {
+      if (res?.data?.user?.id) {
+        // localStorage.setItem("user", JSON.stringify(res.data)),
+        navigate("/events")
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        //@ts-ignore
+        dispatch(ACTION_setCurrUser(res.data.user.id, res.data.user.email))
+      } else {
+        console.log("failed")
+      }
+    })
+  }
+
+  // const register = async () => {
+  //   try {
+  //     console.log(1)
+  //     const response = await fetch("/user/registration", {
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       method: "POST",
+  //       body: JSON.stringify(formData),
+  //     })
+  //     const json = await response.json()
+  //     console.log(json)
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
 
   return (
     <div className="authorization">
@@ -26,7 +67,7 @@ const RegistrationPage: FC = () => {
           Create an account and connect with the people
         </h2>
       </div>
-      <div className="authorization__mid">
+      <div className={`authorization__mid ${isThemeBlack && "_black-light"}`}>
         <Input
           placeholder={"Your Email"}
           value={email}
@@ -47,7 +88,7 @@ const RegistrationPage: FC = () => {
           name={"password"}
           type={"password"}
         />
-        <Button text={"Sign Up"} onClick={() => null} />
+        <Button text={"Sign Up"} onClick={() => register()} />
       </div>
       <div className="authorization__bottom">
         <div className="authorization__subtitle">Already have an account ?</div>

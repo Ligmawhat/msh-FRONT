@@ -7,7 +7,7 @@
   width: 100%;
   height: $--nav-height;
   padding: 0 100px;
-  border-bottom: #EEEFF2 1px solid;
+  //border-bottom: #EEEFF2 1px solid;
   background-color: $--white;
 
   @include miniMobile {
@@ -25,6 +25,22 @@
     max-width: 60px;
     max-height: 60px;
     background-color: transparent;
+    transition: $--transition;
+    animation: heart 1s ease-in-out infinite;
+
+    @keyframes heart {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
   }
 
   &__user {
@@ -60,7 +76,7 @@
     height: 100%;
     left: 32px;
     background: #FFFFFF;
-    box-shadow: 0px 1px 5px rgba(0, 20, 67, 0.14);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 12px;
     border: 0;
     margin: 0px 24px;

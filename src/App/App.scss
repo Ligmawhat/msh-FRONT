@@ -4,6 +4,8 @@ $--dark-slate: #495670;
 $--slate: #83899d;
 $--light-slate: #a8b2d1;
 $--lightest-slate: #ccd6f6;
+$--black: #1A1C21;
+$--black-light: #202833;
 $--white: #FFFFFF;
 $--light-white: #F9FAFB;
 $--green-tint: rgba(100, 255, 218, 0.1);
@@ -19,7 +21,7 @@ $--fz-xl: 20px;
 $--fz-xxl: 22px;
 $--fz-heading: 32px;
 $--border-radius: 4px;
-$--nav-height: 82px;
+$--nav-height: 10.5vh;
 $--text-color: #647188;
 $--text-color-dark: #4E5D78;
 $--nav-scroll-height: 70px;
@@ -67,6 +69,23 @@ $tablet: 768px;
   box-sizing: content-box;
 }
 
+._black {
+  background-color: $--black;
+
+  * {
+    color: $--light-white;
+  }
+
+}
+
+._black-light {
+  background-color: $--black-light;
+
+  * {
+    color: $--light-white;
+  }
+}
+
 
 .wrapper {
   min-height: 100%;
@@ -78,7 +97,7 @@ $tablet: 768px;
   transition: $--transition;
   scroll-behavior: smooth;
   font-family: $--font-roboto;
-  background-color: $--light-white;
+  //background-color: $--light-white;
 
   ._main-container {
     margin: 0 auto;
@@ -93,6 +112,7 @@ $tablet: 768px;
       display: flex;
       justify-content: center;
       align-items: center;
+      min-width: 100vw;
 
     }
   }

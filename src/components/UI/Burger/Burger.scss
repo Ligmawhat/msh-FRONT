@@ -59,6 +59,7 @@
         transition: $--transition;
         background-color: transparent;
         cursor: pointer;
+        gap: 5px;
       }
 
       &__icon {
@@ -72,6 +73,10 @@
       &__text {
         background-color: transparent;
         color: $--text-color-dark;
+
+        &--white {
+          color: $--light-white;
+        }
       }
     }
   }

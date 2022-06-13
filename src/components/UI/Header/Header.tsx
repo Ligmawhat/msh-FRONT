@@ -1,33 +1,25 @@
 import React, { FC, useState } from "react"
 import "./Header.scss"
 import { useNavigate } from "react-router-dom"
+import { useAppSelector } from "../../../hooks/redux"
 import Input from "../../common/Input/Input"
 import Burger from "../Burger/Burger"
-
-const mockLogo =
-  "https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image"
-const mockUser =
-  "https://carouselcenter.org/wp-content/uploads/2017/01/blank-human-image.png"
 
 const Header: FC = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   const burgerHandler = () => setMenuOpen((prev) => !prev)
   const navigate = useNavigate()
+  const isThemeBlack = useAppSelector((s) => s.isThemeBlack)
 
   return (
-    <header className="header">
+    <header className={`header ${isThemeBlack && "_black"}`}>
       <img
         onClick={() => navigate("/")}
-        src={mockLogo}
+        src="assets/svg/logo.svg"
         alt="logo"
         className="header__logo"
       />
       <div className="header__search">
-        {/*<input*/}
-        {/*  placeholder="Найти доброе дело или организацию"*/}
-        {/*  className="header__input"*/}
-        {/*  type="text"*/}
-        {/*/>*/}
         <Input placeholder={"Найти доброе дело или организацию"} />
       </div>
       <Burger menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
