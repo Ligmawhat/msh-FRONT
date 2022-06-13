@@ -12,11 +12,11 @@ const ChatsPage: FC = () => {
   const [user] = useState(true)
   const [companion] = useState(false)
   const [current, setCurrent] = useState(1)
-  const chat = useAppSelector((state) => state.chat)
+  // const chat = useAppSelector((state) => state.chat)
 
-  useEffect(() => {
-    chat && console.log(chat)
-  }, [])
+  // useEffect(() => {
+  //   chat && console.log(chat)
+  // }, [])
   const currentHandler = (n: number) => setCurrent(n)
   const isThemeBlack = useAppSelector((s) => s.isThemeBlack)
   return (

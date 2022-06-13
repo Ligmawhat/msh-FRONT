@@ -8,13 +8,13 @@ import {
   ACTION_whiteTheme,
 } from "../redux/actions/themeActions"
 import Router from "../router/Router"
-import { createSocketOnMessage } from "../utils/socket.message"
+// import { createSocketOnMessage } from "../utils/socket.message"
 
 function App() {
   const dispatch = useAppDispatch()
-  const url = process.env.REACT_APP_URL_SOCKET
+  // const url = process.env.REACT_APP_URL_SOCKET
   const isThemeBlack = useAppSelector((state) => state.isThemeBlack)
-  const socket = useRef<WebSocket>()
+  // const socket = useRef<WebSocket>()
   const navigate = useNavigate()
   // const user = useAppSelector((state) => state.user)
   const user = false
@@ -29,18 +29,18 @@ function App() {
     }
   }, [])
 
-  useEffect(() => {
-    if (user) {
-      socket.current = new WebSocket(url as string)
-      socket.current.onmessage = createSocketOnMessage(dispatch)
-      socket.current.onclose = () => {
-        console.log("server close ws connection. Try again later")
-        navigate("/")
-      }
-    }
+  // useEffect(() => {
+  //   if (user) {
+  //     socket.current = new WebSocket(url as string)
+  //     socket.current.onmessage = createSocketOnMessage(dispatch)
+  //     socket.current.onclose = () => {
+  //       console.log("server close ws connection. Try again later")
+  //       navigate("/")
+  //     }
+  //   }
 
-    // if (isCheckedAuth && !user) navigate("/register")
-  }, [user])
+  //   // if (isCheckedAuth && !user) navigate("/register")
+  // }, [user])
 
   useEffect(() => {
     // dispatch(checkUser())
