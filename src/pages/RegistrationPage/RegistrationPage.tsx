@@ -1,6 +1,5 @@
 import React, { FC, useState } from "react"
 import axios from "axios"
-import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import Button from "../../components/common/Button/Button"
 import Input from "../../components/common/Input/Input"
