@@ -13,7 +13,7 @@ function Logout() {
     axios({
       method: "post",
       withCredentials: true,
-      url: `${process.env.REACT_APP_CLIENT_URL}/user/logout`,
+      url: `/user/logout`,
     }).then((res) => {
       console.log(res)
       if (res.status === 200) {
