@@ -1,13 +1,14 @@
 import axios from "axios"
 import { AnyAction } from "redux"
 import { ThunkAction } from "redux-thunk"
-import { categories } from "../../mocks/events"
+// import { categories } from "../../mocks/events"
 import {
   oneFilter,
   FilterActions,
   AppDispatch,
   filterType,
   RootState,
+  category,
 } from "../../models/redux"
 
 export const setLoading = () => ({
@@ -29,14 +30,21 @@ export const getFilters =
     try {
       dispatch(setLoading())
 
-      // const response = await axios.get(
-      //   `${process.env.REACT_APP_API_URL}/event/`,
-      //   { withCredentials: true },
-      // )
-      // const filters = response.data
+      const response = await axios.get(
+        `${process.env.REACT_APP_API_URL}/event/getAllCategories`,
+        { withCredentials: true },
+      )
+      console.log(response)
+      const categoriesResponse = response.data.allCategories
+      const categories: category[] = categoriesResponse.map(
+        (el: { value: any }, index: any) => {
+          return { activity: false, name: el.value, title: el.value }
+        },
+      )
+      // const categories = response.data
       const filters = [
         {
-          name: "categories",
+          name: "category",
           value: categories,
           title: "Категории",
           type: filterType.buttons,
@@ -48,10 +56,10 @@ export const getFilters =
           type: filterType.search,
         },
         {
-          name: "urgent",
+          name: "urgency",
           value: null,
           title: "Срочность",
-          type: filterType.buttons,
+          type: filterType.select,
         },
       ]
 

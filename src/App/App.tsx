@@ -25,7 +25,7 @@ function App() {
       }
     }
 
-    if (isCheckedAuth && !user) navigate("/register")
+    // if (isCheckedAuth && !user) navigate("/register")
   }, [user])
 
   useEffect(() => {
